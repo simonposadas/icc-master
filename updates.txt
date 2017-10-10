@@ -1,0 +1,8 @@
+UPDATE 2 (08/27/2017)
+
+- approve request email by admin
+- check credentials approve/cancel
+- added disapprove_reason in reservation detail
+- add/edit/delete of inventory
+- tagging of worker
+- tagging of employee
