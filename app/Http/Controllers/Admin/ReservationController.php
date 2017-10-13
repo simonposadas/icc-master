@@ -56,8 +56,15 @@ class ReservationController extends Controller {
      * @return type
      */
     public function markSecondHalf(ReservationIdRequest $reservationIdRequest) {
-        if (ReservationDetail::find($reservationIdRequest->reserv_id)->update(['status' => 6]))
-            return response()->json(['success' => true, 'title' => 'Success', 'message' => 'Successfuly mark as paid 2nd half the reservation']);
+        $reservation_detail = ReservationDetail::find($reservationIdRequest->reserv_id);
+        $yiz = $reservationIdRequest->amount_paid;
+        $no = $_POST["amount_paid"];
+        $amount = $yiz + $no;
+        
+        if ($reservation_detail->update(['status' => 6, 'amount_paid' => $amount]))
+            /*return response()->json(['success' => true, 'title' => 'Success', 'message' => 'Successfuly mark as paid 2nd half the reservation']);*/
+        alert()->success('Successfully marked the reservation as fully paid', 'Success');
+            return redirect()->action('Admin\ReservationController@index');
         return response()->json(['success' => false, 'title' => 'Error', 'message' => 'Something went wrong in marking 2nd half paid the reservation']);
     }
 

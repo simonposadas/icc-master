@@ -29,9 +29,10 @@
                 </div>
                 
                 <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
+                <div class="table-responsive">
+                    <!--<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">-->
+                        <table id="dataTables-example" width="100%" class="table table-striped table-hover tablesorter">
+                        <!--<thead>
                             <tr>
                                 <th>Reserve ID</th>
                                 <th>Customer Number</th>
@@ -44,6 +45,19 @@
                                 <th>Actions</th>
                             </tr>
 
+                        </thead>-->
+                        <thead>
+                            <tr>
+                                <th class="header headerSortUp">Reserve ID<i class="fa fa-sort"></i></th>
+                                <th class="header">Customer Number<i class="fa fa-sort"></i></th>
+                                <th class="header">Customer Name<i class="fa fa-sort"></i></th>
+                                <th class="header">Guest Number<i class="fa fa-sort"></i></th>
+                                <th class="header">Budget<i class="fa fa-sort"></i></th>
+                                <th class="header">Event Date<i class="fa fa-sort"></i></th>
+                                <th class="header">Event Time<i class="fa fa-sort"></i></th>
+                                <th class="header">Status<i class="fa fa-sort"></i></th>
+                                <th class="header">Actions</th>
+                            </tr>
                         </thead>
                         @foreach($reservation_details as $reservation_detail)
                         <tbody>
@@ -89,18 +103,7 @@
 
                                 <!-- Mark as paid 2nd half if already paid the 1st half -->
                                 @if($reservation_detail->status == 5)
-                                <button class="btn btn-primary"
-                                        data-action="{{ route('admin.reserv.second.half', ['reserv_id' => $reservation_detail->reserv_id]) }}"
-                                        data-toggle="confirmation"
-                                        data-btn-ok-label="Ok" data-btn-ok-icon="fa fa-check"
-                                        data-btn-ok-class="btn btn-sm btn-primary"
-                                        data-btn-cancel-label="Cancel"
-                                        data-btn-cancel-icon="fa fa-chevron-circle-left"
-                                        data-btn-cancel-class="btn btn-sm btn-default"
-                                        data-title="Are you sure to mark this as paid 2nd half?"
-                                        data-placement="left" data-singleton="true">
-                                    Paid 2nd Half?
-                                </button>
+                                <button class="btn btn-primary edit2type" data-id="{{$reservation_detail->reserv_id}}"" id="first_half">Paid 2nd half?</button>
                                 @endif
 
                                 <!-- mark reservation as done if status is *approved *confirmed *paid 1st and 2nd payment-->
@@ -187,7 +190,32 @@
 
           <div class="form-group">
             <label>Amount Paid</label>
-            <input type="Number" class="form-control amt_paid" placeholder="Input heres" name="amount_paid" required>
+            <input type="Number" class="form-control amt_paid" placeholder="Input here" name="amount_paid" required>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="add2Modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Reservation Details</h4>
+      </div>
+      <div class="modal-body">
+    <form method="post" action="{{ route('admin.reserv.second.half', ['reserv_id' => $reservation_detail->reserv_id]) }}">
+    {{csrf_field()}}
+    <input type="hidden" class="id" name="id">
+          <div class="form-group">
+            <label>Amount Paid</label>
+            <input type="Number" class="form-control amt_paid" placeholder="Input here" name="amount_paid" required>
           </div>
       </div>
       <div class="modal-footer">
@@ -249,7 +277,27 @@
         });
         $('#addModal').modal('show');
     });
+
+    $('.edit2type').click(function () {
+        $.ajax
+       ({
+            type : "get",
+            url : "{{ route('admin.reserv') }}",
+            data : {"id" : $(this).data('id')},
+            dataType: "json",
+            success: function(response) {
+                response.forEach(function(data){
+                    $('#add2Modal .id').val(data.reserv_id);
+                    $('#add2Modal .amt_paid').val(data.amount_paid);
+                })
+            }
+        });
+        $('#add2Modal').modal('show');
+    });
 </script>
+
+<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../js/datatables.js"></script>
 
 <script>
     /**
@@ -288,4 +336,8 @@
 </script>
 
 
+@endsection
+
+@section('stylesheets')
+    <link rel="stylesheet" type="text/css" href="{{url('css/datatables.css')}}" />
 @endsection
