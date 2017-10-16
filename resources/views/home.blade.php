@@ -240,18 +240,18 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
                     </a>
                     </li>
 
-                  <li id="pg919075164987641044" class="wsite-menu-item-wrap">
+                  <li id="pg919075164987641044" class="{{ Request::is('reservation') || Request::is('reservation/*') ? "active" : "" }}" class="wsite-menu-item-wrap">
                     <a
-                          href="/"
+                          href="{{ route('r.index') }}"
                       class="wsite-menu-item"
                       >
                       Reservation
                     </a>
                     </li>
 
-                  <li id="pg919075164987641044" class="wsite-menu-item-wrap">
+                  <li id="pg919075164987641044" class='{{ Request::is('credential') || Request::is('credential/*') }}}' class="wsite-menu-item-wrap">
                     <a
-                          href="/"
+                          href="{{ route('credential') }}""
                       class="wsite-menu-item"
                       >
                       Check Credentials

@@ -160,10 +160,10 @@ div.paragraph ul, div.paragraph ol { padding-left: 3em !important; margin: 5px 0
 div.paragraph li { padding-left: 5px !important; margin: 3px 0 0 !important; }
 div.paragraph ul, div.paragraph ul li { list-style: disc outside !important; }
 div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; }
-
 </style>
 </head>
-<body class=" no-header-page wsite-theme-light  wsite-page-contact"><div id="wrapper">
+
+<body class=" short-header-page wsite-theme-light  wsite-page-regular-event-packages"><div id="wrapper">
 	<div id="wrap">
 		<div id="wrap-in">
 			<div id="header-wrap" class="wsite-background">
@@ -253,7 +253,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
                       >
                       Contacts
                     </a>
-                    </li> 
+                    </li>
 							</ul>
 							<div style="clear:both"></div>
 						</div>
@@ -271,52 +271,55 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 									</div>
 								</div>
 								<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
-	<h2 class="wsite-content-title" style="text-align:center;"><font size="7">Contact Us</font></h2>
+	<h2 class="wsite-content-title" style="text-align:center;"><font size="7">Lunch and Dinner Packages</font></h2>
+
+<div class="paragraph" style="text-align:center;"><strong><font size="6"></font></strong></div>
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+				
 					
 						
 
-<h2 class="wsite-content-title" style="text-align:left;">Irmalyn's Catering Services&nbsp;</h2>
-
-<div class="paragraph"><font size="5" style="color:rgb(141, 36, 36)"><strong>Cellphone:</strong> 0922 853 7164</font><font size="5" style="color:rgb(141, 36, 36)"></font><font size="5" style="color:rgb(141, 36, 36)">&nbsp;</font><br /><strong style="color:rgb(141, 36, 36)"><font size="5">Telephone:&nbsp;</font></strong><font size="5" style="color:rgb(141, 36, 36)">(02) 661-0076</font></div>
-
-<div class="paragraph" style="text-align:left;">&nbsp;22 Lempira St. Meralco Village Taytay, Rizal<br />(Email)&nbsp;irmalynp@gmail.com<br /><br /></div>
 
 
-					
-				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
-					
-						
+<center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Menu </h2></center>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="Details">
+          <h3><b>Pasta Selection (choice of one)</b></h3><h4>  * Special Creamy and Meaty Lasagna</br>* Fettucine Alfredo with Ham and Bacon</br>* Creamy Pesto Pasta</br>* Fettucine Carbonara</br>* Penne with red and white sauce</br></h4></br>
+          <h3><b>Chicken Selection (choice of one)</b></h3><h4>  * Buffalo wings</br>* Chicken Lollipop with Tartar sauce</br>* Bacon wrapped chicken</br>* Butter Garlic Fried Chicken</br>* Crispy Chicken Fingers</br></h4></br>
+          <h3><b>Pork Selection (choice of one)</b></h3><h4>  * Pork BBQ</br>* Smoked Spare Ribs in Hickory Sauce</br>* Pork Rolls in Sweet Chile Sauce</br>* Seared Pork Loin in Hoisin Sauce</br>* Special Home Made Pork Loaf</br></h4></br>
+          <h3><b>Sandwich Selection (choice of one)</b></h3><h4>  * Club House Sandwich</br>* Tuna / Cheese Pimiento Pinwheels</br>* Chicken Mini Sandwich</br></br>
+          <h3><b>Salad Selection (choice of one)</b></h3><h4>  * Waldorf Salad</br>* Creamy Potato</br>* Macaroni Chicken Salad</br>* Green Salad</br></br></h4>
+          <h3><b>Hors d’oeuvres:</h3> <h4>(Finger Foods all included)</b></h4><h4>  * Nachos with Beef, Salsa and Cheesy Dip</br>* Mozzarella Cheese Sticks</br>* Canape with Tuna and Chicken Salad</br>* Cucumber, Ham and Cheese Skewer</br>* Summer Fruits Skewer</br></h4></br>
+          <h3><b>Desserts (Choice of one)</b></h3><h4>  * Red Velvet Cake with Cream Cheese Frosting</br>* Peach Mango Panna Cotta</br>* Assorted Brownies and Blondies ala mode</br></h4></br>
+          <h3><b>Drinks (choice of one)</b></h3><h4>  * Unlimited Four Season Juice</br>* Red Iced Tea</br></h4><h4>	(FREE: Juice Fountain)</h4></br></br>
+          <div style="text-align:left;"><h2><b><i>Original Price: P450/head</i></b></h2><h3>  Discounted Price: 380/head<h3><h4>Plus 10% Service Charge.</br></h4><h4><b>Terms of Payment:</b> 50%  down payment upon contract signing. Balance to be paid in full 1 week before the event.</h4></br></div>
 
-<div class="wsite-map"><iframe allowtransparency="true" frameborder="0" scrolling="no" style="width: 100%; height: 250px; margin-top: 10px; margin-bottom: 10px;" src="//www.google.com.ph/maps/place/Meralco+Village+Taytay/@14.55453,121.1408703,16.75z/data=!4m12!1m6!3m5!1s0x3397c719d3c0dfcf:0x631b0d96aab50082!2sMeralco+Village+Taytay!8m2!3d14.554815!4d121.1431554!3m4!1s0x3397c719d3c0dfcf:0x631b0d96aab50082!8m2!3d14.554815!4d121.1431554"></iframe></div>
+          
+              
+          <!--<form class="form-horizontal">
+            <div id="food-cont"></div>
+            <div class="form-group">
+              <div class="col-sm-offset-10 col-sm-2">
+                <button type="button" class="btn btn-default addfood">ADD</button>
+              </div>
+            </div>
+          </form>-->
+        </div>
+      </div>
+    </div>
 
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
-					
-						
-
-<span class='imgPusher' style='float:left;height:0px'></span><span style='display: table;width:auto;position:relative;float:left;max-width:100%;;clear:left;margin-top:0px;*margin-top:0px'><a><img src="/images/8116150.jpg" style="margin-top: 10px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; border-width:0; max-width:100%" alt="Picture" class="galleryImageBorder wsite-image" /></a><span style="display: table-caption; caption-side: bottom; font-size: 90%; margin-top: -0px; margin-bottom: 0px; text-align: center;" class="wsite-caption"></span></span>
-<div class="paragraph" style="text-align:left;display:block;"><a href="https://www.facebook.com/CakesCateringAndEventsSpecialist/" target="_blank" title="">Facebook</a></div>
-<hr style="width:100%;clear:both;visibility:hidden;"></hr>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+				<td class="wsite-multicol-col" style="width:25%; padding:0 15px;">
 					
 						
 
@@ -324,115 +327,22 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 
 					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:47.519294377067%; padding:0 15px;">
+				</td>				
 					
 						
 
-<div>
-				<form enctype="multipart/form-data" action="//www.weebly.com/weebly/apps/formSubmit.php"
-				method="POST" id="form-251500228884447110">
-					<div id="251500228884447110-form-parent" class="wsite-form-container"
-					style="margin-top:10px;">
-						<ul class="formlist" id="251500228884447110-form-list">
-							<h2 class="wsite-content-title">For Inquiries Or Suggestions</h2>
-
-<div><div class="wsite-form-field wsite-name-field" style="margin:5px 0px 5px 0px;">
-				<label class="wsite-form-label" for="input-250604613867796921">Name <span class="form-required">*</span></label>
-				<div style="clear:both;"></div>
-				<div class="wsite-form-input-container wsite-form-left wsite-form-input-first-name">
-					<input id="input-250604613867796921" class="wsite-form-input wsite-input" type="text" name="_u250604613867796921[first]" />
-					<label class="wsite-form-sublabel" for="input-250604613867796921">First</label>
-				</div>
-				<div class="wsite-form-input-container wsite-form-right wsite-form-input-last-name">
-					<input id="input-250604613867796921-1" class="wsite-form-input wsite-input" type="text" name="_u250604613867796921[last]" />
-					<label class="wsite-form-sublabel" for="input-250604613867796921-1">Last</label>
-				</div>
-				<div id="instructions-250604613867796921" class="wsite-form-instructions" style="display:none;"></div>
-			</div>
-			<div style="clear:both;"></div></div>
-
-<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
-				<label class="wsite-form-label" for="input-944035190305413248">Email <span class="form-required">*</span></label>
-				<div class="wsite-form-input-container">
-					<input id="input-944035190305413248" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u944035190305413248" />
-				</div>
-				<div id="instructions-944035190305413248" class="wsite-form-instructions" style="display:none;"></div>
-			</div></div>
-
-<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
-				<label class="wsite-form-label" for="input-269193680616096341">Comment <span class="form-required">*</span></label>
-				<div class="wsite-form-input-container">
-					<textarea id="input-269193680616096341" class="wsite-form-input wsite-input wsite-input-width-370px" name="_u269193680616096341" style="height: 200px"></textarea>
-				</div>
-				<div id="instructions-269193680616096341" class="wsite-form-instructions" style="display:none;"></div>
-			</div></div>
-						</ul>
-					</div>
-					<div style="display:none; visibility:hidden;">
-						<input type="text" name="wsite_subject" />
-					</div>
-					<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
-						<input type="hidden" name="form_version" value="2" />
-						<input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
-						<input type="hidden" name="ucfid" value="251500228884447110" />
-						<input type="hidden" name="recaptcha_token"/>
-						<input type="submit" style="position:absolute;top:0;left:-9999px;width:1px;height:1px" />
-						<a class="wsite-button">
-							<span class="wsite-button-inner">Submit</span>
-						</a>
-					</div>
-				</form>
-				<div id="g-recaptcha-251500228884447110" class="recaptcha" data-size="invisible" data-recaptcha="0" data-sitekey="6Ldf5h8UAAAAAJFJhN6x2OfZqBvANPQcnPa8eb1C"></div>
-			
-
-			</div>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:52.480705622933%; padding:0 15px;">
-					
-						
-
-<div class="wsite-spacer" style="height:50px;"></div>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:65.93164277839%; padding:0 15px;">
-					
-						
-
-<div class="wsite-spacer" style="height:50px;"></div>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:34.06835722161%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="/uploads/2/4/6/8/24689035/2092961_orig.jpg" alt="Picture" style="width:100%;max-width:1100px" />
+<div style="text-align:center;"><div style="height: 10px; overflow: hidden;"></div>
+<a class="wsite-button wsite-button-small wsite-button-normal" href="/" >
+<span class="wsite-button-inner">Inquire</span>
 </a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
+
+
+					
+												<td class="wsite-multicol-col" style="width:25%; padding:0 15px;">
+					
+						
+
+<div class="wsite-spacer" style="height:50px;"></div>
 
 
 					
@@ -440,6 +350,14 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 		</tbody>
 	</table>
 </div></div></div>
+
+<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<div class="wsite-adsense"> 
+
+            <script type="text/javascript" src="//www.weebly.com/weebly/apps/serveAds.php?type=adsense&elementid=631373015468400789&ineditor=0&subdomain=www.febondicatering.com&pubid=pub-2651614666951878&adformat=468x60&adtype=text_image&bordercolor=FFFFFF&bgcolor=FFFFFF&linkcolor=0F53FF&textcolor=000000&urlcolor=008000"></script></div>
 </div>
 </div>
 							</div>
@@ -458,18 +376,4 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 <div style="height:0px;overflow:hidden"></div></div>
 
 <div class="paragraph" style="text-align:center;">22 Lempira St. Meralco Village Taytay, Rizal&nbsp;<br />(T) (02) 661-0076<br /><span>Copyright &copy; 2008&nbsp;<a href="http://www..com">Irmalyn's Catering Services</a>. All rights reserved.</span></div></div>
-
-</div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="bootstrap-3.3.7/docs/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="bootstrap-3.3.7/docs/dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="bootstrap-3.3.7/docs/assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
 @endsection
