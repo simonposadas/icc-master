@@ -61,7 +61,7 @@ class AdminController extends Controller {
          * mark the reservation as approve
          */
         if ($reservation_detail->update(['status' => 1, 'total_pay' => $total, 'bud_food' => $reservationIdRequest->budget_food, 'bud_equip' => $reservationIdRequest->budget_equip, 'bud_worker' => $reservationIdRequest->budget_work])) {
-            /*Notification::send($reservation_detail->customer_info, new ReservationApprove($customer_info, $reservationIdRequest->reserv_id));*/
+            Notification::send($reservation_detail->customer_info, new ReservationApprove($customer_info, $reservationIdRequest->reserv_id));
         alert()->success('Successfully booked a reservation. Please wait for the approval.', 'Success');
             return redirect()->back();
         }
@@ -85,7 +85,7 @@ class AdminController extends Controller {
          * mark the reservation as approve
          */
         if ($reservation_detail->update(['status' => 2, 'disapprove_reason' => $reservationIdRequest->disapprove_reason])) {
-            /*Notification::send($reservation_detail->customer_info, new ReservationDisapprove($customer_info, $reservationIdRequest->reserv_id, $reservationIdRequest->disapprove_reason));*/
+            Notification::send($reservation_detail->customer_info, new ReservationDisapprove($customer_info, $reservationIdRequest->reserv_id, $reservationIdRequest->disapprove_reason));
             alert()->success('Successfully disapproved the reservation', 'Success');
             return redirect()->back();
         }
