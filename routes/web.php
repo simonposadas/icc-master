@@ -89,7 +89,7 @@ $this->group(['prefix' => 'admin'], function () {
          */
         $this->group(['prefix' => '{reserv_id}'], function () {
             $this->post('mark-half', 'Admin\ReservationController@markHalf')->name('admin.reserv.half');
-            $this->post('mark-second-half', 'Admin\ReservationController@markSecondHalf')->name('admin.reserv.second.half');
+            $this->put('mark-second-half', 'Admin\ReservationController@markSecondHalf')->name('admin.reserv.second.half');
             $this->put('cancel-with-refund', 'Admin\ReservationController@cancelWithRefund')->name('admin.reserv.cancel.with.refund');
             $this->put('cancel-no-refund', 'Admin\ReservationController@cancelNoRefund')->name('admin.reserv.cancel.no.refund');
             $this->put('mark-done', 'Admin\ReservationController@markDone')->name('admin.reserv.mark.done');
@@ -158,6 +158,25 @@ $this->group(['prefix' => 'admin'], function () {
 });
 
 
+Route::get('/About', function() {
+    return view('about');
+});
+
+Route::get('/Contact', function() {
+    return view('contact');
+});
+
+Route::get('/Menu', function() {
+    return view('menu');
+});
+
+Route::get('/Merienda', function() {
+    return view('merienda');
+});
+
+Route::get('/Lunch&Dinner', function() {
+    return view('lunch&dinner');
+});
 
 Route::get('/Main', function() {
     return view('main');
