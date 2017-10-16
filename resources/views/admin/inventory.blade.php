@@ -7,6 +7,16 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Equipment</h1>
+            {!! Form::open(['method'=>'GET','url'=>'/scopeSearch2','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+            <div class="input-group custom-search-form">
+                <input type="text" name="searchItem2" class="input-group-sm" placeholder="Search" id="search_bar">
+                    <span class="input-group-sm">
+                        <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                        </button>
+                </span>
+            </div>
+            {!! Form::close() !!}
         </div>
         <!-- /.col-lg-12 -->
     </div>

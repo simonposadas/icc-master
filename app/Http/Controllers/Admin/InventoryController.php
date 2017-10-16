@@ -25,6 +25,25 @@ class InventoryController extends Controller {
         return view($this->view . 'inventory', ['equipments' => Equipment::all()]);
     }
 
+        /*  -- - - -- SEARCH -- - - -- */
+
+     public function scopeSearch2()
+    {
+        $searchItem = $_GET["searchItem2"];
+
+        $result = \DB::table('equipment')
+        ->where('equipment_name', $searchItem)
+        ->OrWhere('equipment_id', $searchItem)
+        ->OrWhere('quantity', $searchItem)
+        ->select('equipment.*')->get();
+        //return empty(request()->search) ? $q : $q->where('cust_fname', 'like', '%'.request()->search.'%');
+        return view('admin.inventory')->with('equipments', $result);
+    }
+
+    
+    
+    /* x xx SEARCH xx x */
+
     /**
      * Show the specified resource
      * @param Request $request

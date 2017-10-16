@@ -128,8 +128,8 @@ $this->group(['prefix' => 'admin'], function () {
     /**
      * /admin/equipment
      */
-    $this->group(['prefix' => 'equipment'], function () {
-        $this->get('{equipment_id}', 'Admin\EquipmentController@show');
+    $this->group(['prefix' => 'inventory'], function () {
+        $this->get('{equipment_id}', 'Admin\InventoryController@show');
     });
     
     /**
@@ -188,6 +188,8 @@ Route::get('/Details', function() {
 Route::get('/Credentials', function() {
     return view('credentials');
 });
+
+Route::get('/scopeSearch2', 'Admin\InventoryController@scopeSearch2');
 
 Route::get('/admin/customer', 'AdminController@customer');
 Route::get('/getcustomer', 'AdminController@getcustomer');
