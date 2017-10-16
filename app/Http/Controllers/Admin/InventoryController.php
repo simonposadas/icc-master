@@ -36,8 +36,12 @@ class InventoryController extends Controller {
         ->OrWhere('equipment_id', $searchItem)
         ->OrWhere('quantity', $searchItem)
         ->select('equipment.*')->get();
+        if(count($result) == 0){
+            alert()->error('No result to display. Please try again.', 'Error')->persistent('Close');
+        return redirect()->back();
+        }
         //return empty(request()->search) ? $q : $q->where('cust_fname', 'like', '%'.request()->search.'%');
-        return view('admin.inventory')->with('equipments', $result);
+        return view('admin.inventory')->with('equipments', $result);   
     }
 
     

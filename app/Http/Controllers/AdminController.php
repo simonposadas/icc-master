@@ -109,6 +109,11 @@ class AdminController extends Controller {
         ->OrWhere('cust_lname', $searchItem)
         ->OrWhere('reserv_id', $searchItem)
         ->select('reservation_details.*', 'customer_info.*')->get();
+
+        if(count($result) == 0){
+            alert()->error('No result to display. Please try again.', 'Error')->persistent('Close');
+        return redirect()->back();
+        }
         //return empty(request()->search) ? $q : $q->where('cust_fname', 'like', '%'.request()->search.'%');
         return view('admin.reservation.index')->with('reservation_details', $result);
     }

@@ -158,6 +158,7 @@ $this->group(['prefix' => 'admin'], function () {
 });
 
 
+
 Route::get('/About', function() {
     return view('about');
 });

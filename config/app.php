@@ -156,6 +156,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Crabbly\FPDF\FpdfServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------

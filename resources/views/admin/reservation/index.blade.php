@@ -29,9 +29,9 @@
                 </div>
                 
                 <!-- /.panel-heading -->
-                <div class="table-responsive">
+                <div class="panel-body">
                     <!--<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">-->
-                        <table id="dataTables-example" width="100%" class="table table-striped table-hover tablesorter">
+                        <table width="100%" class="table table-striped table-bordered table-hover sortable" id="dataTables-example">
                         <!--<thead>
                             <tr>
                                 <th>Reserve ID</th>
@@ -48,15 +48,15 @@
                         </thead>-->
                         <thead>
                             <tr>
-                                <th class="header headerSortUp">Reserve ID<i class="fa fa-sort"></i></th>
-                                <th class="header">Customer Number<i class="fa fa-sort"></i></th>
-                                <th class="header">Customer Name<i class="fa fa-sort"></i></th>
-                                <th class="header">Guest Number<i class="fa fa-sort"></i></th>
-                                <th class="header">Budget<i class="fa fa-sort"></i></th>
-                                <th class="header">Event Date<i class="fa fa-sort"></i></th>
-                                <th class="header">Event Time<i class="fa fa-sort"></i></th>
-                                <th class="header">Status<i class="fa fa-sort"></i></th>
-                                <th class="header">Actions</th>
+                                <th>Reserve ID</th>
+                                <th>Customer Number</th>
+                                <th>Customer Name</th>
+                                <th>Guest Number</th>
+                                <th>Budget</th>
+                                <th>Event Date</th>
+                                <th>Event Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         @foreach($reservation_details as $reservation_detail)
@@ -296,8 +296,7 @@
     });
 </script>
 
-<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../js/datatables.js"></script>
+<script src="{{ $url = asset('/js/sorttable.js') }}"></script>
 
 <script>
     /**
