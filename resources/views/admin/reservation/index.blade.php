@@ -280,8 +280,8 @@
 
                     $('#addModal .id').val(data.reserv_id);
                     $('#addModal .rcpt_no').val(data.receipt_no);
-                    $('#addModal #total_bal').html('Balance: ' + data.total_pay + '<br>');
-                    $('#addModal #cust_bud').html('Customer Budget: ' + data.cust_budget + '<br>');
+                    $('#addModal #total_bal').html('Balance: ' + response.total_pay + '<br>');
+                    $('#addModal #cust_bud').html('Customer Budget: ' + response.cust_budget + '<br>');
                     $('#addModal .amt_paid').val(data.amount_paid);
                 })
             }

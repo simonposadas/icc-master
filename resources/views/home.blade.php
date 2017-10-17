@@ -1,4 +1,4 @@
-@extends('layouts.nav')
+@extends('layouts.wala')
 
 @section('title','Welcome to Irmalyns catering')
 
