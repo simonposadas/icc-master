@@ -34,7 +34,7 @@ class ReservationController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {   
+    public function index() {
         $events_data = [];
         foreach (ReservationDetail::all() as $reservation_detail) {
             $obj = new \stdClass();
@@ -67,10 +67,6 @@ class ReservationController extends Controller {
         foreach ($validateDetailsRequest->all() as $key => $val) {
             session([$key => $val]);
         }
-
-        ReservationDetail::count('reserv_date') as $reservation;
-
-        
 
         return redirect()->route('r.packages');
     }
