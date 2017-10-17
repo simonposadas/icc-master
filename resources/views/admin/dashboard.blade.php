@@ -132,6 +132,7 @@
                 var customer_info = response.customer_info;
                 var event_detail = response.event_detail;
                 var package_detail = response.package_detail;
+                var reservation_detail = response.reservation_detail;
 
                 $('#editModal .id').val(response.reserv_id);
 
@@ -144,6 +145,7 @@
                         );
 
                 $('#editModal #event-detail').html(
+                        'Budget: &#8369;' + response.cust_budget + "<br>" +
                         'Type: ' + event_detail.event_type + '<br>' +
                         'Place: ' + event_detail.place + '<br><br>'
                         );

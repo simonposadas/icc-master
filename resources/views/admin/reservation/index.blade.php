@@ -69,7 +69,7 @@
                         <!-- reserv guest no -->
                         <td>{{ $reservation_detail->reserv_guestNo }}</td>
                         <!-- reserv budget -->
-                        <td>{{ $reservation_detail->cust_budget }}</td>
+                        <td>&#8369;{{ $reservation_detail->cust_budget }}</td>
                         <!-- reserv date -->
                         <td>{{ $reservation_detail->reserv_date }}</td>
                         <!-- reserv time -->
@@ -181,22 +181,29 @@
       </div>
       <div class="modal-body">
     <form method="post" action="{{ route('admin.reserv.half', ['reserv_id' => $reservation_detail->reserv_id]) }}">
-    {{csrf_field()}}
+    
     <input type="hidden" class="id" name="id">
-          <div class="form-group">
+        <div class="form-group">
             <label>Receipt Number</label>
             <input type="text" class="form-control rcpt_no" placeholder="Input here" name="receipt_no" required>
-          </div>
+        </div>
 
-          <div class="form-group">
+        <label class='control-label'><u>Total Balance</u></label> <br>
+        <div id='total_bal'></div>
+
+        <label class='control-label'><u>Customer Budget</u></label> <br>
+        <div id='cust_bud'></div>
+
+        <div class="form-group">
             <label>Amount Paid</label>
-            <input type="Number" class="form-control amt_paid" placeholder="Input here" name="amount_paid" required>
-          </div>
+            <input type="Number" class="form-control amt_paid" placeholder="Input here" name="amount-paid" required>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save</button>
       </div>
+      {{csrf_field()}}
     </form>
     </div>
   </div>
@@ -269,8 +276,12 @@
             dataType: "json",
             success: function(response) {
                 response.forEach(function(data){
+                    //var reservation_details = response.reservation_details;
+
                     $('#addModal .id').val(data.reserv_id);
                     $('#addModal .rcpt_no').val(data.receipt_no);
+                    $('#addModal #total_bal').html('Balance: ' + data.total_pay + '<br>');
+                    $('#addModal #cust_bud').html('Customer Budget: ' + data.cust_budget + '<br>');
                     $('#addModal .amt_paid').val(data.amount_paid);
                 })
             }
