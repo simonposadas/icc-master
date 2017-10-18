@@ -332,7 +332,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 						
 
 <div style="text-align:center;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-small wsite-button-normal" href="/" >
+<a class="wsite-button wsite-button-small wsite-button-normal" href="/reservation" >
 <span class="wsite-button-inner">Inquire</span>
 </a>
 

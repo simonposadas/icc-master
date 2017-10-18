@@ -160,6 +160,53 @@ div.paragraph ul, div.paragraph ol { padding-left: 3em !important; margin: 5px 0
 div.paragraph li { padding-left: 5px !important; margin: 3px 0 0 !important; }
 div.paragraph ul, div.paragraph ul li { list-style: disc outside !important; }
 div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; }
+body{
+        background-image: url('{{ asset("images/Orange.jpg") }}');
+    }
+    .Details{
+        background-color: white;
+        padding: 20px;
+    }
+    div.next{
+        position: absolute;
+        right: 5%;
+        bottom: -160%;
+    }
+        #Imgbtn1{
+            position: absolute;
+            left: 15%;
+            top: 25%;
+        }
+        .Imgbtn2{
+            position: absolute;
+            right: 15%;
+            top: 25%;
+        }
+        .Imgbtn3{
+            position: absolute;
+            left: 15%;
+            top: 85%;
+        }
+        .Imgbtn4{
+            position: absolute;
+            right: 15%;
+            top: 85%;
+        }
+        .Imgbtn5{
+            position: absolute;
+            left:  15%;
+            top: 145%;
+        }
+        .Imgbtn6{
+            position: absolute;
+            right: 15%;
+            top: 145%;
+        }
+        .Imgbtn7{
+            position: absolute;
+            left:  15%;
+            top: 205%;
+        }
 </style>
 </head>
 
@@ -288,31 +335,36 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 <center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Menu </h2></center>
     
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="Details">
-          <h3><b>Pasta Selection (choice of one)</b></h3><h4>  * Special Creamy and Meaty Lasagna</br>* Fettucine Alfredo with Ham and Bacon</br>* Creamy Pesto Pasta</br>* Fettucine Carbonara</br>* Penne with red and white sauce</br></h4></br>
-          <h3><b>Chicken Selection (choice of one)</b></h3><h4>  * Buffalo wings</br>* Chicken Lollipop with Tartar sauce</br>* Bacon wrapped chicken</br>* Butter Garlic Fried Chicken</br>* Crispy Chicken Fingers</br></h4></br>
-          <h3><b>Pork Selection (choice of one)</b></h3><h4>  * Pork BBQ</br>* Smoked Spare Ribs in Hickory Sauce</br>* Pork Rolls in Sweet Chile Sauce</br>* Seared Pork Loin in Hoisin Sauce</br>* Special Home Made Pork Loaf</br></h4></br>
-          <h3><b>Sandwich Selection (choice of one)</b></h3><h4>  * Club House Sandwich</br>* Tuna / Cheese Pimiento Pinwheels</br>* Chicken Mini Sandwich</br></br>
-          <h3><b>Salad Selection (choice of one)</b></h3><h4>  * Waldorf Salad</br>* Creamy Potato</br>* Macaroni Chicken Salad</br>* Green Salad</br></br></h4>
-          <h3><b>Hors d’oeuvres:</h3> <h4>(Finger Foods all included)</b></h4><h4>  * Nachos with Beef, Salsa and Cheesy Dip</br>* Mozzarella Cheese Sticks</br>* Canape with Tuna and Chicken Salad</br>* Cucumber, Ham and Cheese Skewer</br>* Summer Fruits Skewer</br></h4></br>
-          <h3><b>Desserts (Choice of one)</b></h3><h4>  * Red Velvet Cake with Cream Cheese Frosting</br>* Peach Mango Panna Cotta</br>* Assorted Brownies and Blondies ala mode</br></h4></br>
-          <h3><b>Drinks (choice of one)</b></h3><h4>  * Unlimited Four Season Juice</br>* Red Iced Tea</br></h4><h4>	(FREE: Juice Fountain)</h4></br></br>
-          <div style="text-align:left;"><h2><b><i>Original Price: P450/head</i></b></h2><h3>  Discounted Price: 380/head<h3><h4>Plus 10% Service Charge.</br></h4><h4><b>Terms of Payment:</b> 50%  down payment upon contract signing. Balance to be paid in full 1 week before the event.</h4></br></div>
+    <div class="container-fluid col-md-offset-2">
+    
+            <div class="col-md-6">
+            <a href="/Pack1">
+            <h1><button class="label label-default" type="button">Package 1</button></h1></br></a>
+            <h4>&#8369 500 per head</h4>
+            <a href="/Pack2">
+            <h1><button class="label label-default" type="button">Package 2</button></h1></br></a>
+            <h4>&#8369 450 per head</h4>
+            <a href="/Pack3">
+            <h1><button class="label label-default" type="button">Package 3</button></h1></br></a>
+            <h4>&#8369 400 per head</h4>
+            <a href="/Pack4">
+            <h1><button class="label label-default" type="button">Package 4</button></h1></br></a>
+            <h4>&#8369 350 per head</h4>
+            <a href="/Pack5">
+            <h1><button class="label label-default" type="button">Package 5</button></h1></br></a>
+            <h4>&#8369 300 per head</h4>
+            <a href="/Pack6">
+            <h1><button class="label label-default" type="button">Package 6</button></h1></br></a>
+            <h4>&#8369 290 per head</h4>
+            <a href="/Pack7">
+            <h1><button class="label label-default" type="button">Package 7</button></h1></br></a>
+            <h4>&#8369 280 per head</h4>
+            
+            
 
-          
-              
-          <!--<form class="form-horizontal">
-            <div id="food-cont"></div>
-            <div class="form-group">
-              <div class="col-sm-offset-10 col-sm-2">
-                <button type="button" class="btn btn-default addfood">ADD</button>
-              </div>
             </div>
-          </form>-->
-        </div>
-      </div>
-    </div>
+            </div>
+            </div>
 
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
@@ -331,10 +383,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 					
 						
 
-<div style="text-align:center;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-small wsite-button-normal" href="/" >
-<span class="wsite-button-inner">Inquire</span>
-</a>
+
 
 
 					
