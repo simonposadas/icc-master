@@ -84,6 +84,7 @@
     </div>
   </div>
 </div>
+
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -108,6 +109,7 @@
     </div>
   </div>
 </div>
+
 <form method="post" action="/deletefood" id="delete-form">
 {{ csrf_field() }}
 <input type="hidden" name="id" class="id">
@@ -124,7 +126,7 @@
         $.ajax
         ({
             type : "get",
-            url : '/getFood',
+            url : '/admin/food',
             data : {"id" : $(this).data('id')},
             dataType: "json",
             success: function(response) {

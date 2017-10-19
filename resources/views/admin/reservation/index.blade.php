@@ -187,13 +187,6 @@
             <label>Receipt Number</label>
             <input type="text" class="form-control rcpt_no" placeholder="Input here" name="receipt_no" required>
         </div>
-
-        <label class='control-label'><u>Total Balance</u></label> <br>
-        <div id='total_bal'></div>
-
-        <label class='control-label'><u>Customer Budget</u></label> <br>
-        <div id='cust_bud'></div>
-
         <div class="form-group">
             <label>Amount Paid</label>
             <input type="Number" class="form-control amt_paid" placeholder="Input here" name="amount-paid" required>
@@ -280,8 +273,6 @@
 
                     $('#addModal .id').val(data.reserv_id);
                     $('#addModal .rcpt_no').val(data.receipt_no);
-                    $('#addModal #total_bal').html('Balance: ' + response.total_pay + '<br>');
-                    $('#addModal #cust_bud').html('Customer Budget: ' + response.cust_budget + '<br>');
                     $('#addModal .amt_paid').val(data.amount_paid);
                 })
             }

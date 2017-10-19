@@ -62,6 +62,22 @@ class ReservationEquipmentController extends Controller {
         return redirect()->back();
     }
 
+        /**
+     * Create dropdown object
+     * 
+     * @param type $obj
+     * @param type $key
+     * @param type $name
+     * @return type
+     */
+    public function create_dropdown($obj, $key, $name) {
+        $ret = [];
+        foreach ($obj as $data) {
+            $ret[$data->$key] = $data->equipment_name;
+        }
+        return $ret;
+    }
+
     /**
      * Display the specified resource.
      *

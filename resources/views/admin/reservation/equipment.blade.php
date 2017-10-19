@@ -244,7 +244,7 @@
          */
         modal.find('select[name="equipment_id"]').on('change', function () {
             $.ajax({
-                url: '/admin/equipment/' + $(this).val(),
+                url: '/admin/inventory/' + $(this).val(),
                 dataType: 'json',
                 success: function (data) {
                     modal.find('input[name="cost"]').val(data.cost);

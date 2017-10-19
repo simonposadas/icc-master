@@ -152,22 +152,23 @@ class AdminController extends Controller {
             'food_name' => $_POST['name'],
             'food_type_id' => $_POST['type'],
             ]);
-        alert()->success('Successfully added a food', 'Success');
-
+        alert()->success('Successfully added a food', 'Success')->persistent('Close');
+ 
         return redirect('/admin/food');
     }
+    
     public function editfood(){
-        DB::table('food_details')->where('food_id',$_POST['id'])->update([ 
-            'food_name' => $_POST['name']
-            ]);
-        alert()->success('Successfully edited a food', 'Success');
-        return redirect('/admin/food');
+        if(DB::table('food_details')->where('food_id',$_POST["id"])->update(['food_name' => $_POST["name"]]))
+        alert()->success('Successfully edited a food', 'Success')->persistent('Close');
+
+        alert()->error('Something went wrong editing the food', 'Error')->persistent('Close');
+        return redirect()->back();
     }
     public function deletefood(){
         DB::table('food_details')->where('food_id',$_POST['id'])->update([ 
             'status' => 1
             ]);
-        alert()->success('Successfully deleted a food', 'Success');
+        alert()->success('Successfully deleted a food', 'Success')->persistent('Close');
         return redirect('/admin/food');
     }
     public function foodtype(){
@@ -183,21 +184,21 @@ class AdminController extends Controller {
         DB::table('food_type')->insert([ 
             'food_type_name' => $_POST['name']
             ]);
-        alert()->success('Successfully added a food type', 'Success');
+        alert()->success('Successfully added a food type', 'Success')->persistent('Close');
         return redirect('/admin/foodtype');
     }
     public function editfoodtype(){
         DB::table('food_type')->where('food_type_id',$_POST['id'])->update([ 
             'food_type_name' => $_POST['name']
             ]);
-        alert()->success('Successfully edited a food type', 'Success');
+        alert()->success('Successfully edited a food type', 'Success')->persistent('Close');
         return redirect('/admin/foodtype');
     }
     public function deletefoodtype(){
         DB::table('food_type')->where('food_type_id',$_POST['id'])->update([ 
             'status' => 1
             ]);
-        alert()->success('Successfully deleted a food type', 'Success');
+        alert()->success('Successfully deleted a food type', 'Success')->persistent('Close');
         return redirect('/admin/foodtype');
     }
     public function workerrole(){
@@ -213,21 +214,21 @@ class AdminController extends Controller {
         DB::table('worker_role')->insert([ 
             'worker_role_description' => $_POST['name']
             ]);
-        alert()->success('Successfully added a worker role', 'Success');
+        alert()->success('Successfully added a worker role', 'Success')->persistent('Close');
         return redirect('/admin/workerrole');
     }
     public function editworkerrole(){
         DB::table('worker_role')->where('worker_role_id',$_POST['id'])->update([ 
             'worker_role_description' => $_POST['name']
             ]);
-        alert()->success('Successfully edited a worker role', 'Success');
+        alert()->success('Successfully edited a worker role', 'Success')->persistent('Close');
         return redirect('/admin/Workerrole');
     }
     public function deleteworkerrole(){
         DB::table('worker_role')->where('worker_role_id',$_POST['id'])->update([ 
             'status' => 1
             ]);
-        alert()->success('Successfully deleted a worker role', 'Success');
+        alert()->success('Successfully deleted a worker role', 'Success')->persistent('Close');
         return redirect('/admin/workerrole');
     }
     public function worker(){
@@ -248,7 +249,7 @@ class AdminController extends Controller {
             'worker_age' => $_POST['Age'],
             'worker_role_id' => $_POST['type'],
             ]);
-        alert()->success('Successfully added a worker', 'Success');
+        alert()->success('Successfully added a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
     public function editworker(){
@@ -259,14 +260,14 @@ class AdminController extends Controller {
             'worker_age' => $_POST['Age'],
             'worker_role_id' => $_POST['type'],
             ]);
-        alert()->success('Successfully edited a worker', 'Success');
+        alert()->success('Successfully edited a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
     public function deleteworker(){
         DB::table('worker')->where('worker_id',$_POST['id'])->update([ 
             'status' => 1
             ]);
-        alert()->success('Successfully added a worker', 'Success');
+        alert()->success('Successfully added a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
     public function equipment(){
@@ -284,7 +285,7 @@ class AdminController extends Controller {
             'cost' => $_POST['Cost'],
             'quantity' => $_POST['Quantity'],
             ]);
-        alert()->success('Successfully added an equipment', 'Success');
+        alert()->success('Successfully added an equipment', 'Success')->persistent('Close');
         return redirect('/admin/equipment');
     }
     public function editequipment(){
@@ -293,14 +294,14 @@ class AdminController extends Controller {
             'cost' => $_POST['Cost'],
             'quantity' => $_POST['Quantity'],
             ]);
-        alert()->success('Successfully edited an equipment', 'Success');
+        alert()->success('Successfully edited an equipment', 'Success')->persistent('Close');
         return redirect('/admin/equipment');
     }
     public function deleteequipment(){
         DB::table('equipment')->where('equipment_id',$_POST['id'])->update([ 
             'status' => 1
             ]);
-        alert()->success('Successfully deleted an equipment', 'Success');
+        alert()->success('Successfully deleted an equipment', 'Success')->persistent('Close'); 
         return redirect('/admin/equipment');
     }
 
