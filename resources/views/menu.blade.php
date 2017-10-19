@@ -281,7 +281,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 <div><div class="wsite-image wsite-image-border-thin " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
 <a>
-<img src="/images/banner-tall.jpg" alt="Picture" style="width:auto;max-width:100%" />
+<img src="/images/1.jpg" alt="Picture" style="width:auto;max-width:100%" />
 </a>
 <div style="display:block;font-size:90%"></div>
 </div></div>
@@ -315,7 +315,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
 <a>
-<img src="/images/banner-tall.jpg" alt="Picture" style="width:100%;max-width:800px" />
+<img src="/images/2.jpg" alt="Picture" style="width:100%;max-width:800px" />
 </a>
 <div style="display:block;font-size:90%"></div>
 </div></div>
@@ -349,7 +349,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 <div><div class="wsite-image wsite-image-border-thin " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
 <a>
-<img src="/images/banner-tall.jpg" alt="Picture" style="width:100%;max-width:800px" />
+<img src="/images/3.jpg" alt="Picture" style="width:100%;max-width:800px" />
 </a>
 <div style="display:block;font-size:90%"></div>
 </div></div>
@@ -383,7 +383,7 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 <div><div class="wsite-image wsite-image-border-thin " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
 <a>
-<img src="/images/banner-tall.jpg" alt="Picture" style="width:100%;max-width:800px" />
+<img src="/images/4.jpg" alt="Picture" style="width:100%;max-width:800px" />
 </a>
 <div style="display:block;font-size:90%"></div>
 </div></div>
