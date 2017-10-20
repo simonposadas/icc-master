@@ -84,6 +84,9 @@ $this->group(['prefix' => 'admin'], function () {
      */
     $this->group(['prefix' => 'reservation'], function () {
         $this->get('/', 'Admin\ReservationController@index')->name('admin.reserv');
+        $this->post('/save', 'Admin\ReservationController@save')->name('admin.reserv.save');
+        $this->get('/new/select', 'Admin\ReservationController@selectProduct')->name('admin.reserv.select_product');
+        $this->get('/view/product/details', 'Admin\ReservationController@viewProductDetails')->name('admin.reserv.view.product.details');
         /**
          * /admin/reservation/{reserv_id}
          */

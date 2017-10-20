@@ -26,6 +26,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of Reservations
+                    <div class="pull-right"><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#createNewModal">Create New Reservation</button></div>
                 </div>
                 
                 <!-- /.panel-heading -->
@@ -222,6 +223,84 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save</button>
       </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="createNewModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Reservation Details</h4>
+      </div>
+      <div class="modal-body">
+    <form method="post" action="{{ route('admin.reserv.save') }}">
+        <div class="form-group{{ $errors->has('event_type') ? ' has-error' : '' }}">
+            {!! Form::label('event_type', 'Event Type:') !!}
+            {!! Form::select('event_type', config()->get('constants.event_types'), session('event_type', 'wedding'), ['class' => 'form-control']) !!}
+            @if ($errors->has('event_type'))
+            <span class="help-block">
+                <strong>{{ $errors->first('event_type') }}</strong>
+            </span>
+            @endif
+        </div>
+
+        <!-- schedule date -->
+        <div class="form-group{{ $errors->has('reserv_date') ? ' has-error' : '' }}">
+            {!! Form::label('schedule_date', 'Schedule Date:') !!}
+            {!! Form::text('reserv_date', session('reserv_date', ''), [
+            'class' => 'form-control', 
+            'onkeydown' => 'return false;', 
+            'onkeyup' => 'return false', 
+            'required' => 'required',
+            'id' => 'date']) !!}
+            @if ($errors->has('reserv_date'))
+            <span class="help-block">
+                <strong>{{ $errors->first('reserv_date') }}</strong>
+            </span>
+            @endif
+        </div>
+        <!-- time -->
+        <div class="form-group{{ $errors->has('reserv_time') ? ' has-error' : '' }}">
+            {!! Form::label('schedule_time', 'Time:') !!}
+            <input type="Time" class="form-control"  name="reserv_time" required min='07:00:00' max='21:00:00' value='{{ session('reserv_time', '') }}'>
+            @if ($errors->has('reserv_time'))
+            <span class="help-block">
+                <strong>{{ $errors->first('reserv_time') }}</strong>
+            </span>
+            @endif
+        </div>
+
+        <!-- no of guests -->  
+        <div class="form-group{{ $errors->has('reserv_guestNo') ? ' has-error' : '' }}">
+            {!! Form::label('number_of_guests', 'No. of Guests:') !!}
+            <input type="Number" class="form-control" placeholder="Input here" name="reserv_guestNo" min="75" max="900" value='{{ session('reserv_guestNo', '') }}'>
+            @if ($errors->has('reserv_guestNo'))
+            <span class="help-block">
+                <strong>{{ $errors->first('reserv_guestNo') }}</strong>
+            </span>
+            @endif
+        </div>
+
+        <!-- event place -->
+        <div class="form-group{{ $errors->has('event_place') ? ' has-error' : '' }}">
+            {!! Form::label('event_place', 'Event Place:') !!}
+            {!! Form::text('event_place', session('event_place', ''), [
+            'class' => 'form-control', 
+            'required' => 'required',
+            'placeholder' => 'Input place here']
+            ) !!}
+            @if ($errors->has('event_place'))
+            <span class="help-block">
+                <strong>{{ $errors->first('event_place') }}</strong>
+            </span>
+            @endif
+        </div>
+      {{csrf_field()}}
+
+      <button class="btn btn-primary">Submit</button>
     </form>
     </div>
   </div>
