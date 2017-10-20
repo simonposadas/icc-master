@@ -157,7 +157,41 @@ $this->group(['prefix' => 'admin'], function () {
     ]);
 });
 
+Route::get('/Pack1', function() {
+    return view('pack1');
+});
 
+Route::get('/Pack2', function() {
+    return view('pack2');
+});
+
+Route::get('/Pack3', function() {
+    return view('pack3');
+});
+
+Route::get('/Pack4', function() {
+    return view('pack4');
+});
+
+Route::get('/Pack5', function() {
+    return view('pack5');
+});
+
+Route::get('/Pack6', function() {
+    return view('pack6');
+});
+
+Route::get('/Pack7', function() {
+    return view('pack7');
+});
+
+Route::get('/About', function() {
+    return view('about');
+});
+
+Route::get('/Contact', function() {
+    return view('contact');
+});
 
 Route::get('/About', function() {
     return view('about');
@@ -191,6 +225,7 @@ Route::get('/Credentials', function() {
 });
 
 Route::get('/scopeSearch2', 'Admin\InventoryController@scopeSearch2');
+Route::get('/scopeSearch3', 'AdminController@scopeSearch3');
 
 Route::get('/admin/customer', 'AdminController@customer');
 Route::get('/getcustomer', 'AdminController@getcustomer');

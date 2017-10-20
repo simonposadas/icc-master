@@ -84,10 +84,10 @@
       <div class="modal-body">
     <form method="post" action="/editfoodtype">
     {{csrf_field()}}
-    <input type="hidden" class="id" name="id">
+    <input type="hidden" class="id" name="id" id="editID">
           <div class="form-group">
             <label>Food Type Name</label>
-            <input type="text" class="form-control inpname" placeholder="" name="name">
+            <input type="text" class="form-control inpname" placeholder="" name="name" >
           </div>
       </div>
       <div class="modal-footer">
@@ -112,19 +112,20 @@
 	});
 
     $('.edittype').click(function () {
-        $.ajax
-        ({
-            type : "get",
-            url : '/getFoodType',
-            data : {"id" : $(this).data('id')},
-            dataType: "json",
-            success: function(response) {
-                response.forEach(function(data){
-                    $('#editModal .id').val(data.food_type_id);
-                    $('#editModal .inpname').val(data.food_type_name);
-                })
-            }
-        });
+        // $.ajax
+        // ({
+        //     type : "get",
+        //     url : '/getFoodType',
+        //     data : {"id" : $(this).data('id')},
+        //     dataType: "json",
+        //     success: function(response) {
+        //         response.forEach(function(data){
+        //             $('#editModal .id').val(data.food_type_id);
+        //             $('#editModal .inpname').val(data.food_type_name);
+        //         })
+        //     }
+        // });
+        $('#editID').val($(this).data('id'));
         $('#editModal').modal('show');
     });
 

@@ -118,6 +118,27 @@ class AdminController extends Controller {
         return view('admin.reservation.index')->with('reservation_details', $result);
     }
 
+     public function scopeSearch3()
+    {
+        $searchItem = $_GET["searchItem3"];
+
+        $result = \DB::table('worker')
+        ->join('worker_role', 'worker_role.worker_role_id', '=', 'worker.worker_role_id')
+        ->where('worker_fname', $searchItem)
+        ->OrWhere('worker_lname', $searchItem)
+        ->OrWhere('worker_mname', $searchItem)
+        ->OrWhere('worker_age', $searchItem)
+        ->select('worker.*')->get();
+
+        if(count($result) == 0){
+            alert()->error('No result to display. Please try again.', 'Error')->persistent('Close');
+        return redirect()->back();
+        }
+        //return empty(request()->search) ? $q : $q->where('cust_fname', 'like', '%'.request()->search.'%');
+        return view('/admin/
+            worker')->with('worker', $result);
+    }
+
     
     
     /* x xx SEARCH xx x */
@@ -158,10 +179,15 @@ class AdminController extends Controller {
     }
     
     public function editfood(){
-        if(DB::table('food_details')->where('food_id',$_POST["id"])->update(['food_name' => $_POST["name"]]))
+        // if(DB::table('food_details')->where('food_id', $_POST['id'])->update(['food_name' => $_POST['name']])){
+        //  alert()->success('Successfully edited a food', 'Success')->persistent('Close');
+        // }
+        // alert()->error('Something went wrong editing the food', 'Error')->persistent('Close');
+
+        DB::table('food_details')->where('food_id', $_POST['id'])->update(['food_name' => $_POST['name']]);
+
         alert()->success('Successfully edited a food', 'Success')->persistent('Close');
 
-        alert()->error('Something went wrong editing the food', 'Error')->persistent('Close');
         return redirect()->back();
     }
     public function deletefood(){
@@ -210,20 +236,22 @@ class AdminController extends Controller {
         return response()->json($type);
     }
 
-    public function addWorkerRole(){
+    public function addworkerrole(){
         DB::table('worker_role')->insert([ 
             'worker_role_description' => $_POST['name']
             ]);
         alert()->success('Successfully added a worker role', 'Success')->persistent('Close');
         return redirect('/admin/workerrole');
     }
+
     public function editworkerrole(){
         DB::table('worker_role')->where('worker_role_id',$_POST['id'])->update([ 
             'worker_role_description' => $_POST['name']
             ]);
         alert()->success('Successfully edited a worker role', 'Success')->persistent('Close');
-        return redirect('/admin/Workerrole');
+        return redirect('/admin/workerrole');
     }
+
     public function deleteworkerrole(){
         DB::table('worker_role')->where('worker_role_id',$_POST['id'])->update([ 
             'status' => 1
@@ -231,11 +259,13 @@ class AdminController extends Controller {
         alert()->success('Successfully deleted a worker role', 'Success')->persistent('Close');
         return redirect('/admin/workerrole');
     }
+
     public function worker(){
         $var = DB::table('worker')->join('worker_role','worker.worker_role_id','=','worker_role.worker_role_id')->where('worker.status',0)->get();
         $type = DB::table('worker_role')->where('status',0)->get();
         return view('/admin/worker',['var' => $var,'type' => $type ]);
     }
+
     public function getworker(Request $req){
         $type = DB::table('worker')->where('worker_id',$req->id)->get();
         return response()->json($type);
@@ -252,6 +282,7 @@ class AdminController extends Controller {
         alert()->success('Successfully added a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
+
     public function editworker(){
         DB::table('worker')->where('worker_id',$_POST['id'])->update([ 
             'worker_fname' => $_POST['FirstName'],
@@ -263,6 +294,7 @@ class AdminController extends Controller {
         alert()->success('Successfully edited a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
+
     public function deleteworker(){
         DB::table('worker')->where('worker_id',$_POST['id'])->update([ 
             'status' => 1
@@ -270,10 +302,12 @@ class AdminController extends Controller {
         alert()->success('Successfully added a worker', 'Success')->persistent('Close');
         return redirect('/admin/worker');
     }
+
     public function equipment(){
         $type = DB::table('equipment')->where('status',0)->get();
         return view('/admin/equipment',['type' => $type ]);
     }
+
     public function getequipment(Request $req){
         $type = DB::table('equipment')->where('equipment_id',$req->id)->get();
         return response()->json($type);
@@ -288,6 +322,7 @@ class AdminController extends Controller {
         alert()->success('Successfully added an equipment', 'Success')->persistent('Close');
         return redirect('/admin/equipment');
     }
+
     public function editequipment(){
         DB::table('equipment')->where('equipment_id',$_POST['id'])->update([ 
             'equipment_name' => $_POST['Equipment'],
@@ -297,6 +332,7 @@ class AdminController extends Controller {
         alert()->success('Successfully edited an equipment', 'Success')->persistent('Close');
         return redirect('/admin/equipment');
     }
+
     public function deleteequipment(){
         DB::table('equipment')->where('equipment_id',$_POST['id'])->update([ 
             'status' => 1

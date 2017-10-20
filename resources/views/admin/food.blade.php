@@ -24,6 +24,7 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
+                                        <th>Food ID</th>
                                         <th>Name</th>
                                         <th>Type</th>
                                         <th>Actions</th>
@@ -31,6 +32,7 @@
                                 </thead>
                                 @foreach($var as $var)
                                 <tbody>
+                                    <td>{{$var->food_id}}</td>
                                     <td>{{$var->food_name}}</td>
                                 	<td>{{$var->food_type_name}}</td>
                                     <td>
@@ -95,7 +97,7 @@
       <div class="modal-body">
     <form method="post" action="/editfood">
     {{csrf_field()}}
-    <input type="hidden" class="id" name="id">		  
+    <input type="hidden" class="id" name="id" id="editID">		  
           <div class="form-group">
 		    <label>Food Name</label>
 		    <input type="text" class="form-control inpname" placeholder="" name="name">
@@ -122,20 +124,29 @@
 	  $('#addModal').modal('show');
 	});
 
-    $('.edittype').click(function () {
-        $.ajax
-        ({
-            type : "get",
-            url : '/admin/food',
-            data : {"id" : $(this).data('id')},
-            dataType: "json",
-            success: function(response) {
-                response.forEach(function(data){
-                    $('#editModal .id').val(data.food_id);
-                    $('#editModal .inpname').val(data.food_name);
-                })
-            }
+    $('#editModal').on('show.bs.modal', function () {
+        $(this).find('#btn-primary').on('click', function () {
+            $('#editModal').find('form').submit();
         });
+    })
+
+    $('.edittype').click(function () {
+        // $.ajax
+        // ({
+        //     type : 'get',
+        //     url : '/getfood' + $(this).data('id'),
+        //     data : {"id" : $(this).data('id')},
+        //     dataType: "json",
+        //     success: function(response) {
+        //         response.forEach(function(data){
+        //             $('#editModal .id').val($(this).data('id'));
+        //             $('#editModal .inpname').val(data.food_name);
+        //             alert($('#editModal').val());
+        //         })
+        //     }
+        // });
+        // $('#editModal form').attr('action', $(this).data('action'));
+        $('#editID').val($(this).data('id'));
         $('#editModal').modal('show');
     });
 

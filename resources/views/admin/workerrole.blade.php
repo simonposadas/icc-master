@@ -83,7 +83,7 @@
       <div class="modal-body">
     <form method="post" action="/editworkerrole">
     {{csrf_field()}}
-    <input type="hidden" class="id" name="id">
+    <input type="hidden" class="id" name="id" id="editModal">
           <div class="form-group">
             <label>Worker Role description</label>
             <input type="text" class="form-control inpname" placeholder="" name="name">
@@ -109,20 +109,21 @@
 	  $('#addModal').modal('show');
 	});
 
-    $('.edittype').click(function () {
-        $.ajax
-        ({
-            type : "get",
-            url : '/getWorkerRole',
-            data : {"id" : $(this).data('id')},
-            dataType: "json",
-            success: function(response) {
-                response.forEach(function(data){
-                    $('#editModal .id').val(data.worker_role_id);
-                    $('#editModal .inpname').val(data.worker_role_description);
-                })
-            }
-        });
+    // $('.edittype').click(function () {
+    //     $.ajax
+    //     ({
+    //         type : "get",
+    //         url : '/getWorkerRole',
+    //         data : {"id" : $(this).data('id')},
+    //         dataType: "json",
+    //         success: function(response) {
+    //             response.forEach(function(data){
+    //                 $('#editModal .id').val(data.worker_role_id);
+    //                 $('#editModal .inpname').val(data.worker_role_description);
+    //             })
+    //         }
+    //     });
+        $('#editID').val($(this).data('id'));
         $('#editModal').modal('show');
     });
 

@@ -1,11 +1,11 @@
-@extends('layouts.nav')
+@extends('layouts.wala')
 
 @section('title','Welcome to Irmalyns catering')
 
 @section('content')
     <!-- Carousel
     ================================================== -->
-    
+      
 
 
     <!-- Marketing messaging and featurettes

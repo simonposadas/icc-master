@@ -6,7 +6,7 @@
 
 <style type="text/css">
     body{
-        background-image: url('{{ asset("images/Orange.jpg") }}');
+        background-image: url('{{ asset("images/background.jpg") }}');
     }
     .Details{
         background-color: white;

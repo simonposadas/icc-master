@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('title','Worker')
@@ -5,9 +6,8 @@
 @section('content')
 <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Worker</h1>
-                </div>
+              <div class="col-lg-12">
+                <h1 class="page-header">Worker</h1>
                 <!-- /.col-lg-12 -->
             </div>
             <div class="row">
@@ -109,7 +109,7 @@
       <div class="modal-body">
     <form method="post" action="/editworker">
     {{csrf_field()}}
-    <input type="hidden" class="id" name="id">		  
+    <input type="hidden" class="id" name="id" id="editID">		  
           <div class="form-group">
 		    <label>First name</label>
 		    <input type="text" class="form-control inpFname" placeholder="" name="FirstName">
@@ -125,7 +125,7 @@
 
           <div class="form-group">
             <label>Age</label>
-            <input type="text" class="form-control inpage" placeholder="" name="Age">
+            <input type="number" class="form-control inpage" placeholder="" name="Age">
           </div>
           <div class="form-group">
             <label>Worker Role</label>
@@ -158,23 +158,24 @@
 	});
 
     $('.edittype').click(function () {
-        $.ajax
-        ({
-            type : "get",
-            url : '/getWorker',
-            data : {"id" : $(this).data('id')},
-            dataType: "json",
-            success: function(response) {
-                response.forEach(function(data){
-                    $('#editModal .id').val(data.worker_id);
-                    $('#editModal .inpFname').val(data.worker_fname);
-                    $('#editModal .inpMname').val(data.worker_mname);
-                    $('#editModal .inpLname').val(data.worker_lname);
-                    $('#editModal .inpage').val(data.worker_age);
-                    $('#editModal select option[value="'+data.worker_role_id+'"]').attr("selected","selected");
-                })
-            }
-        });
+        // $.ajax
+        // ({
+        //     type : "get",
+        //     url : '/getWorker',
+        //     data : {"id" : $(this).data('id')},
+        //     dataType: "json",
+        //     success: function(response) {
+        //         response.forEach(function(data){
+        //             $('#editModal .id').val(data.worker_id);
+        //             $('#editModal .inpFname').val(data.worker_fname);
+        //             $('#editModal .inpMname').val(data.worker_mname);
+        //             $('#editModal .inpLname').val(data.worker_lname);
+        //             $('#editModal .inpage').val(data.worker_age);
+        //             $('#editModal select option[value="'+data.worker_role_id+'"]').attr("selected","selected");
+        //         })
+        //     }
+        // });
+        $('#editID').val($(this).data('id'));
         $('#editModal').modal('show');
     });
 

@@ -149,10 +149,11 @@ class ReservationController extends Controller {
                     ->persistent('Close');
             return redirect()->back();
         }
+
         $storeRequest->session()->flush();
         alert()->success('Successfully booked a reservation. Please wait for the approval.', 'Success')
                 ->persistent('Close');
-
         return redirect('/');
+        
     }
 }

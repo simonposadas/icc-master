@@ -99,11 +99,6 @@
                             <li>
                                 <a href="/admin/customer"><i class="fa fa-table fa-fw"></i> Customers</a>
                             </li>
-
-                            <li>
-                                <a href="/test"><i class="fa fa-table fa-fw"></i> Test</a>
-                            </li>
-
                             <!-- inventory -->
                             <li class='{{ Request::is('admin/inventory') || Request::is('admin/inventory/*') ? 'active' : '' }}'>
                                 <a href="{{ route('admin.inventory') }}"><i class="fa fa-table fa-fw"></i> Inventory</a>
