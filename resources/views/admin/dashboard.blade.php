@@ -92,22 +92,35 @@
             </div>
 
             <!-- reservation budget -->
-            <div id='div-bud_food'class='form-group'>
+            <div id='div-bud_food' class='form-group'>
                 <br>
                 <label class='control-label'><u>Budget for Food</u></label> 
                 <input type='number' name='budget_food' class='form-control' required/>
             </div>
 
-            <div id='div-bud_equip'class='form-group'>
+
+<div class="row to-add">
+  <div class="col-sm-6">
+   <div class='form-group'><input name = "description" class="form-control" placeholder="Description"></input></div>
+</div>
+  <div class="col-sm-6">
+<div class='form-group'><input name = "price" class="form-control add-each" placeholder="Price"></input></div>
+</div>
+</div>
+               
+<button id = "button-add" type = "button">ADD</button>
+
+
+            <div id='div-bud_equip' class='form-group'>
                 <br>
                 <label class='control-label'><u>Budget for Equipment</u></label> 
                 <input type='number' name='budget_equip' class='form-control' required/>
             </div>
 
-            <div id='div-bud_worker'class='form-group'>
+            <div id='div-bud_worker' class='form-group'>
                 <br>
                 <label class='control-label'><u>Budget for Workers</u></label> 
-                <input type='number' name='budget_work' class='form-control' required/>
+                <input  type='number' name='budget_work' class='form-control' required/>
             </div>
 
             <div class="modal-footer">
@@ -176,5 +189,34 @@
         $('#editModal #btn-submit').removeClass('btn-primary');
         $('#editModal #btn-submit').removeClass('btn-danger');
     });
+
+$(document).on('click', '#button-add', function(){
+    $('.to-add').append('<div class="col-sm-6">' +
+           '<div class="form-group"><input class = "form-control" name = "description[]" placeholder="Description"></input></div>' +
+        '</div>' +
+          '<div class="col-sm-6">' +
+        '<div class="form-group"><input class="form-control add-each" name = "price[]" placeholder="Price"></input></div>' +
+        '</div>');
+         
+});
+
+
+
+$(document).on('change', '.add-each', function()
+{
+    console.log("Trial");
+    var budget = 0;
+
+    $('.add-each').each(function()
+    {
+        budget = budget + ($(this).val());
+    });
+
+    $('input [name = "budget_food"]').val(budget);
+   
+});
+
+
+
 </script>
 @endsection
