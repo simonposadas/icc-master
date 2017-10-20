@@ -10,13 +10,13 @@ use App\Model\EventDetail;
 use App\Model\ReservationDetail;
 
 /**
- * 
+ *
  */
 class ReservationController extends Controller {
 
     /**
      * View directort
-     * @var type 
+     * @var type
      */
     protected $view = 'reservation.';
 
@@ -26,7 +26,7 @@ class ReservationController extends Controller {
      * @return void
      */
     public function __construct() {
-        
+
     }
 
     /**
@@ -60,7 +60,7 @@ class ReservationController extends Controller {
 
     /**
      * Validate event details request
-     * 
+     *
      * @param \App\Http\Requests\Reservation\ValidateDetailsRequest $validateDetailsRequest
      */
     public function validateDetails(\App\Http\Requests\Reservation\ValidateDetailsRequest $validateDetailsRequest) {
@@ -81,7 +81,7 @@ class ReservationController extends Controller {
 
     /**
      * Display list of package
-     * 
+     *
      * @param \App\Http\Requests\Reservation\PackageTypeIdRequest $packageTypeIdRequest
      * @return type
      */
@@ -91,7 +91,7 @@ class ReservationController extends Controller {
 
     /**
      * Package information
-     * 
+     *
      * @param \App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest
      * @return type
      */
@@ -103,7 +103,7 @@ class ReservationController extends Controller {
 
     /**
      * Redirect to reservation
-     * 
+     *
      * @param \App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest
      * @return type
      */
@@ -154,6 +154,6 @@ class ReservationController extends Controller {
         alert()->success('Successfully booked a reservation. Please wait for the approval.', 'Success')
                 ->persistent('Close');
         return redirect('/');
-        
+
     }
 }

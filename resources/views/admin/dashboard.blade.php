@@ -37,48 +37,45 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h3 class="page-header text-muted">Dashboard</h3>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default">
+            <div class="panel panel-info" style="border:none;border-radius:0px;">
                 <div class="panel-heading">
-                    List of Reservations
+                    <h3>Reservations</h3>
                 </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                            <tr>
-                                <th>Reserve ID</th>
-                                <th>Customer Name</th>
-                                <th>Guest Number</th>
-                                <th>Budget</th>
-                                <th>Place</th>
-                                <th>Event Date</th>
-                                <th>Event Time</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        @foreach($type as $type)
-                        <tbody>
-                        <td>{{$type->reserv_id}}</td>
-                        <td>{{$type->cust_fname . " " . $type->cust_lname}}</td>
-                        <td>{{$type->reserv_guestNo}}</td>
-                        <td>{{$type->cust_budget}}</td>
-                        <td>{{$type->place}}</td>
-                        <td>{{$type->reserv_date}}</td>
-                        <td>{{$type->reserv_time}}</td>
-                        <td>
-                            <button class="btn btn-primary edittype" data-id="{{$type->reserv_id}}" data-action="{{ route('admin.reserv.approve', ['reserv_id' => $type->reserv_id]) }}" data-status='approve'>Approve</button>
-                            <button class="btn btn-danger edittype" data-id="{{$type->reserv_id}}" data-action="{{ route('admin.reserv.disapprove', ['reserv_id' => $type->reserv_id])}}" data-status='disapprove'>Disapprove</button>
-                        </td>
-                        </tbody>
-                        @endforeach
-                    </table>
-                </div>
+                <table width="100%" class="table table-striped table-hover" id="dataTables-example">
+                    <thead>
+                        <tr class="text-center">
+                            <th class="col-sm-1">Reserve ID</th>
+                            <th class="col-sm-1" style="font-size:12px;">Customer Name</th>
+                            <th class="col-sm-1">Guest Number</th>
+                            <th class="col-sm-1">Budget</th>
+                            <th class="col-sm-1">Place</th>
+                            <th class="col-sm-1">Event Date</th>
+                            <th class="col-sm-1">Event Time</th>
+                            <th class="col-sm-2">Actions</th>
+                        </tr>
+                    </thead>
+                    @foreach($type as $type)
+                    <tbody>
+                    <td>{{$type->reserv_id}}</td>
+                    <td>{{$type->cust_fname . " " . $type->cust_lname}}</td>
+                    <td>{{$type->reserv_guestNo}}</td>
+                    <td>{{$type->cust_budget}}</td>
+                    <td>{{$type->place}}</td>
+                    <td>{{$type->reserv_date}}</td>
+                    <td>{{$type->reserv_time}}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm edittype" data-id="{{$type->reserv_id}}" data-action="{{ route('admin.reserv.approve', ['reserv_id' => $type->reserv_id]) }}" data-status='approve'>Approve</button>
+                        <button class="btn btn-danger btn-sm edittype" data-id="{{$type->reserv_id}}" data-action="{{ route('admin.reserv.disapprove', ['reserv_id' => $type->reserv_id])}}" data-status='disapprove'>Disapprove</button>
+                    </td>
+                    </tbody>
+                    @endforeach
+                </table>
                 <!-- /.panel-body -->
             </div>
             <!-- /.panel -->
@@ -133,7 +130,7 @@
                   <input type='number' readonly name='budget_food' class='form-control' id="budget_food" style="background-color:white;border-radius:0px;" placeholder="Amount in Php allocated for Food" required/>
               </div>
 
-                <h5 class="text-muted line-either-side">Anong meron dito?</h5>
+                {{-- <h5 class="text-muted line-either-side">Anong meron dito?</h5>
                 <div class="row to-add">
                   <div class="col-sm-6">
                    <div class='form-group'>
@@ -147,7 +144,7 @@
                   </div>
                 </div>
 
-                <button id = "button-add" class="btn btn-success btn-sm" type = "button">ADD</button>
+                <button id = "button-add" class="btn btn-success btn-sm" type = "button">ADD</button> --}}
 
               <div id='div-bud_equip' class='form-group'>
                   <br>
