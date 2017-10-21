@@ -86,7 +86,20 @@ class ReservationController extends Controller {
      * @return type
      */
     public function packageList(\App\Http\Requests\Reservation\PackageTypeIdRequest $packageTypeIdRequest) {
-        return view($this->view . 'packages_list', ['packages' => PackageType::find($packageTypeIdRequest->id)->package_detail]);
+
+        $main = \DB::table('food_details')
+        ->where('status', 0)
+        ->where('food_type_id', 10)->get();
+
+        $dessert = \DB::table('food_details')
+        ->where('status', 0)
+        ->where('food_type_id', 11)->get();
+
+        $appetite = \DB::table('food_details')
+        ->where('status', 0)
+        ->where('food_type_id', 1)->get();
+
+        return view($this->view . 'packages_list', ['main' => $main, 'dessert' => $dessert, 'appetite' => $appetite, 'packages' => PackageType::find($packageTypeIdRequest->id)->package_detail]);
     }
 
     /**

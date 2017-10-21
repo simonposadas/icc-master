@@ -124,7 +124,7 @@
 
               <!-- reservation budget -->
               <div id='div-bud_food' class='form-group'>
-                  <label>Budget for Food</label>
+                          <label>Budget for Food</label>
                   <br />
                   <span class="text-muted" style="font-size:12px">The following will be updated based on the inputted data on Equipment and Workers Budget</span>
                   <input type='number' readonly name='budget_food' class='form-control' id="budget_food" style="background-color:white;border-radius:0px;" placeholder="Amount in Php allocated for Food" required/>

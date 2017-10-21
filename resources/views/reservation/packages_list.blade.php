@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title','Reservation Packages')
+@section('title','Package List')
 
 @section('content')
 
@@ -56,9 +56,43 @@
 <center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Packages </h2></center>
 
 <div class="container-fluid col-md-offset-2">
-    @for($i=0; $i<count($packages);)
+    <div class="form-group">
+
+            <label>Choose Appetizer</label>
+            <select class="form-control" name="type">
+            <option>Select</option>
+            @foreach($appetite as $appetites)
+                <option value="{{$appetites->food_name}}">{{$appetites->food_name}}</option>
+            @endforeach
+            </select>
+
+            <label>Choose Main Dishes</label>
+            <select class="form-control" name="type">
+            <option>Select</option>
+            @foreach($main as $mains)
+                <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
+            @endforeach
+            </select>
+
+            <select class="form-control" name="type">
+            <option>Select</option>
+            @foreach($main as $mains)
+                <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
+            @endforeach
+            </select>
+
+            <label>Choose Dessert</label>
+            <select class="form-control" name="type">
+            <option>Select</option>
+            @foreach($dessert as $desserts)
+                <option value="{{$desserts->food_name}}">{{$desserts->food_name}}</option>
+            @endforeach
+            </select>
+          </div>
+
+   <!--  @for($i=0; $i<count($packages);)
         <!-- first column -->
-        @if($i == count($packages) - 1)
+        <!-- @if($i == count($packages) - 1)
         @break
         @endif
         <div class="row">
@@ -75,7 +109,7 @@
             @break
             @endif
             <!-- second column -->
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <h1><span class="label label-default">{{ $packages[$iteration]->package_name }}</span></h1>
                 <h4>P{{ $packages[$iteration]->package_price }} per head</h4>
                 <a href="{{ route('r.packages.info', ['id' => $packages[$iteration]->package_type_id, 'package_id' => $packages[$iteration]->package_id]) }}">
@@ -84,7 +118,7 @@
 
             </div>
         </div>
-        @endfor
+        @endfor -->
 </div>  
 
 <div class="next">
