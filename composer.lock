@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "48199ffc1b058578276e41832ddb3bf2",
+    "content-hash": "36a6b9fa935d9e434339e36fbd50d5f4",
     "packages": [
         {
             "name": "crabbly/fpdf-laravel",

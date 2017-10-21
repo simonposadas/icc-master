@@ -326,91 +326,61 @@
     height:40px;
 }
 </style>
+<?php 
+    $credentials = Session::get('ReservationCredentials');
+?>
 
 <div id="page-wrapper">
     <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class = "row">
+            <hr>
+            <p><b>Event Type: </b>{{$credentials[0]}}</p>
+            <p><b>Schedule of event: </b>
+                {{date('M d, Y',strtotime($credentials[1]))}} ({{ date('h:i a',strtotime($credentials[2]))}}) 
+            </p>
+            <p><b>Event Type: </b>{{$credentials[0]}}</p>
+            <p><b>Number of Guest: </b>{{$credentials[3]}} persons</p>
+            <p><b>Venue: </b>{{$credentials[4]}}</p>
+        </div>    
+    </div>
+        <hr>
+    <div class="col-sm-12 col-md-12 col-lg-12">
         <!-- product -->
+        <h4><b>The list of all the packages oefferd by the shop</b></h4>
         <div class="product-content product-wrap clearfix product-deatil">
-            <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12 ">
-                        <div class="product-image"> 
-                            <div id="myCarousel-2" class="carousel slide">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-                                <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-                                <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <!-- Slide 1 -->
-                                <div class="item active">
-                                    <img src="https://lorempixel.com/300/300/technics/1/" alt="">
-                                </div>
-                                <!-- Slide 2 -->
-                                <div class="item">
-                                    <img src="https://lorempixel.com/300/300/technics/1/" alt="">
-                                </div>
-                                <!-- Slide 3 -->
-                                <div class="item">
-                                    <img src="https://lorempixel.com/300/300/technics/1/" alt="">
-                                </div>
-                            </div>
-                            <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-                            <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
-                
-                    <h2 class="name">
-                        Product Name Title Here 
-                        <small>Product by <a href="javascript:void(0);">Adeline</a></small>
-                    </h2>
-                    <hr>
-                    <div class="certified">
-                        <ul>
-                            <li><a href="javascript:void(0);">Info<span>info here</span></a></li>
-                            <li><a href="javascript:void(0);">Info<span>info here</span></a></li>
-                        </ul>
-                    </div>
-                    <hr>
-                    <div class="description description-tabs">
-                        <ul id="myTab" class="nav nav-pills">
-                            <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Product Description </a></li>
-                            <li class=""><a href="#specifications" data-toggle="tab">Specifications</a></li>
-                        </ul>
-                        <div id="myTabContent" class="tab-content">
-                            <div class="tab-pane fade active in" id="more-information">
-                                <br>
-                                <strong>Description Title</strong>
-                                <p>Integer egestas, orci id condimentum eleifend, nibh nisi pulvinar eros, vitae ornare massa neque ut orci. Nam aliquet lectus sed odio eleifend, at iaculis dolor egestas. Nunc elementum pellentesque augue sodales porta. Etiam aliquet rutrum turpis, feugiat sodales ipsum consectetur nec. </p>
-                            </div>
-                            <div class="tab-pane fade" id="specifications">
-                                <br>
-                                <dl class="">
-                                        <dt>Gravina</dt>
-                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                        <dd>Eget lacinia odio sem nec elit.</dd>
-                                        <br>
 
-                                        <dt>Test lists</dt>
-                                        <dd>A description list is perfect for defining terms.</dd>
-                                        <br>    
-
-                                        <dt>Altra porta</dt>
-                                        <dd>Vestibulum id ligula porta felis euismod semper</dd>
-                                    </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                <a href="{{ URL::previous() }}" class="btn btn-success btn-lg">Back to list</a>
-                        </div>
-                </div>
-            </div>
+    @foreach($packages as $packages)
+        <div class="row">
+            <div class = "col-md-2">{{$packages->package_id}}</div>
+            <div class = "col-md-2"><b>{{$packages->package_name}}</b></div>
+            <div class = "col-md-2"><b>Php {{number_format($packages->package_price,2)}}</b></div>
+            <div class = "col-md-2"><button class = "showMore_Btn btn btn-sm btn-primary">Show more details</button></div>
         </div>
+        <div class = "more_details row">
+            <table id="sam" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th> Item ID</th>
+                        <th>Description</th>
+                        <th> Price</th>
+                        <th> Item</th>
+                    </tr>
+                </thead>
+        @foreach($foods as $food)
+            @if($food->package_id == $packages->package_id)
+            <tr>
+              <td>Item-{{$food->id}}</td>
+              <td>{{$food->desc}}</td>
+              <td>{{number_format($food->price,2)}}</td>
+              <td><button class = "btn btn-sm btn-info">Select</button></td>
+            </tr>
+            @else
+            
+            @endif
+        @endforeach
+            </table>
+        </div>
+     @endforeach
         <!-- end product -->
     </div>
 </div>

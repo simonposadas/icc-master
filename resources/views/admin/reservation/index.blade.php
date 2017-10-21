@@ -4,6 +4,12 @@
 
 @section('content')
 
+
+<?php 
+ use Carbon\Carbon;
+ $current = Carbon::now('Asia/Manila');
+ //echo $current;
+?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -43,6 +49,7 @@
                                 <th>Event Date</th>
                                 <th>Event Time</th>
                                 <th>Status</th>
+
                                 <th>Actions</th>
                             </tr>
 
@@ -234,10 +241,14 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Add Reservation Details</h4>
+
       </div>
       <div class="modal-body">
-    <form method="post" action="{{ route('admin.reserv.save') }}">
+
+{!! Form::open(array('route' => 'New_reservations.store', 'data-parsley-validate'=>'', 'method'=>'POST')) !!}
+    
         <div class="form-group{{ $errors->has('event_type') ? ' has-error' : '' }}">
+
             {!! Form::label('event_type', 'Event Type:') !!}
             {!! Form::select('event_type', config()->get('constants.event_types'), session('event_type', 'wedding'), ['class' => 'form-control']) !!}
             @if ($errors->has('event_type'))
@@ -248,19 +259,17 @@
         </div>
 
         <!-- schedule date -->
+        <label>Schedule Date:</label>
         <div class="form-group{{ $errors->has('reserv_date') ? ' has-error' : '' }}">
-            {!! Form::label('schedule_date', 'Schedule Date:') !!}
-            {!! Form::text('reserv_date', session('reserv_date', ''), [
-            'class' => 'form-control', 
-            'onkeydown' => 'return false;', 
-            'onkeyup' => 'return false', 
-            'required' => 'required',
-            'id' => 'date']) !!}
-            @if ($errors->has('reserv_date'))
-            <span class="help-block">
-                <strong>{{ $errors->first('reserv_date') }}</strong>
-            </span>
-            @endif
+
+            <input type="date" name="datepick" class = "form-control" value = "{{date('Y-m-d',strtotime($current))}}" 
+            min= "<?php
+                        $min = new DateTime();
+                        $min->modify("+1 month");
+                        $max = new DateTime();
+                        echo $min->format("Y-m-d");
+                        ?>" required/>
+
         </div>
         <!-- time -->
         <div class="form-group{{ $errors->has('reserv_time') ? ' has-error' : '' }}">
@@ -276,7 +285,7 @@
         <!-- no of guests -->  
         <div class="form-group{{ $errors->has('reserv_guestNo') ? ' has-error' : '' }}">
             {!! Form::label('number_of_guests', 'No. of Guests:') !!}
-            <input type="Number" class="form-control" placeholder="Input here" name="reserv_guestNo" min="75" max="900" value='{{ session('reserv_guestNo', '') }}'>
+            <input type="Number" class="form-control" placeholder="Input here" name="reserv_guestNo" min="75" max="900" value="{{ session('reserv_guestNo', '') }}" required/>
             @if ($errors->has('reserv_guestNo'))
             <span class="help-block">
                 <strong>{{ $errors->first('reserv_guestNo') }}</strong>
@@ -301,7 +310,7 @@
       {{csrf_field()}}
 
       <button class="btn btn-primary">Submit</button>
-    </form>
+    {!! Form::close() !!}
     </div>
   </div>
 </div>

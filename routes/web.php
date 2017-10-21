@@ -11,6 +11,7 @@
   |
  */
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -18,7 +19,11 @@ Route::get('/', function () {
 /**
  * /reservation
  */
+
+
+
 $this->group(['prefix' => 'reservation'], function () {
+    $this->Resource('New_reservations','job_Order_Controller');
     $this->get('/', 'ReservationController@index')->name('r.index');
     $this->get('details', 'ReservationController@details')->name('r.details');
     $this->post('details', 'ReservationController@validateDetails');

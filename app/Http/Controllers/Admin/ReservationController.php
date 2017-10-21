@@ -123,9 +123,9 @@ class ReservationController extends Controller {
         /**
          * update the inventory
          */
-        foreach ($reservation_detail->equipment as $equipment) {
-            $equipment->quantity = $equipment->quantity + $equipment->pivot->quantity;
-            $equipment->save();
+            foreach ($reservation_detail->equipment as $equipment) {
+                $equipment->quantity = $equipment->quantity + $equipment->pivot->quantity;
+                $equipment->save();
         }
         /**
          * delete the assigned worker in the event
@@ -137,4 +137,7 @@ class ReservationController extends Controller {
         ReservationEquipment::where('reserv_id', $reservation_detail->reserv_id)->delete();
     }
 
+
+
+    
 }
