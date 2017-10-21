@@ -10,6 +10,7 @@ use App\Http\Requests\Reservation\ReservationIdRequest;
 use App\Model\ReservationEquipment;
 use App\Model\ReservationWorker;
 
+use Session;
 /**
  * 
  */
@@ -33,6 +34,16 @@ class ReservationController extends Controller {
             'reservation_details' => $reservation_details,
             'equipments' => $this->create_dropdown(Equipment::all(), 'equipment_id', 'equipment_name')
         ]);
+    }
+
+    /**
+     * Save to session
+     * @return type
+     */
+    public function saveToSession(Request $request) {
+        Session::put('item_list.'. $request->input('id'));
+
+        return response()->json('success');
     }
 
     /**
@@ -139,5 +150,5 @@ class ReservationController extends Controller {
 
 
 
-    
+
 }

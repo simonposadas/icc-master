@@ -23,7 +23,17 @@ Route::get('/', function () {
 
 
 $this->group(['prefix' => 'reservation'], function () {
-    $this->Resource('New_reservations','job_Order_Controller');
+    $this->Resource('New_reservations','recipe_Controller');
+    $this->Resource('Adding_reservations','recipeAddingController');
+
+    $this->get('/Add_recipe/{id}', ['uses' => 'Food_Creator_Controller@adding_Recipe', 'as' => 'Addto_Food']);
+    
+    $this->get('/Creation_New_Foods', ['uses' => 'Food_Creator_Controller@createFood', 'as' => 'Create_Food']);
+
+    $this->Resource('New_food','foodRecipe_Controller');
+
+
+    $this->Resource('New_recipe','recipe_Controller');
     $this->get('/', 'ReservationController@index')->name('r.index');
     $this->get('details', 'ReservationController@details')->name('r.details');
     $this->post('details', 'ReservationController@validateDetails');
@@ -92,6 +102,7 @@ $this->group(['prefix' => 'admin'], function () {
         $this->post('/save', 'Admin\ReservationController@save')->name('admin.reserv.save');
         $this->get('/new/select', 'Admin\ReservationController@selectProduct')->name('admin.reserv.select_product');
         $this->get('/view/product/details', 'Admin\ReservationController@viewProductDetails')->name('admin.reserv.view.product.details');
+        $this->get('/save_to_session', 'Admin\ReservationController@saveToSession')->name('admin.reserv.save_to_session');
         /**
          * /admin/reservation/{reserv_id}
          */

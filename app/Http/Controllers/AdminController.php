@@ -172,6 +172,7 @@ class AdminController extends Controller {
         DB::table('food_details')->insert([ 
             'food_name' => $_POST['name'],
             'food_type_id' => $_POST['type'],
+            'price' => $_POST['price'],
             ]);
         alert()->success('Successfully added a food', 'Success')->persistent('Close');
  
@@ -184,7 +185,7 @@ class AdminController extends Controller {
         // }
         // alert()->error('Something went wrong editing the food', 'Error')->persistent('Close');
 
-        DB::table('food_details')->where('food_id', $_POST['id'])->update(['food_name' => $_POST['name']]);
+        DB::table('food_details')->where('food_id', $_POST['id'])->update(['food_name' => $_POST['name'], 'price' => $_POST['price']]);
 
         alert()->success('Successfully edited a food', 'Success')->persistent('Close');
 

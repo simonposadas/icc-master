@@ -346,7 +346,7 @@
         <hr>
     <div class="col-sm-12 col-md-12 col-lg-12">
         <!-- product -->
-        <h4><b>The list of all the packages oefferd by the shop</b></h4>
+        <h4><b>The list of all the packages offered by the shop</b></h4>
         <div class="product-content product-wrap clearfix product-deatil">
 
     @foreach($packages as $packages)
@@ -356,7 +356,7 @@
             <div class = "col-md-2"><b>Php {{number_format($packages->package_price,2)}}</b></div>
             <div class = "col-md-2"><button class = "showMore_Btn btn btn-sm btn-primary">Show more details</button></div>
         </div>
-        <div class = "more_details row">
+        <div class = "more_details row hidden">
             <table id="sam" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -372,7 +372,7 @@
               <td>Item-{{$food->id}}</td>
               <td>{{$food->desc}}</td>
               <td>{{number_format($food->price,2)}}</td>
-              <td><button class = "btn btn-sm btn-info">Select</button></td>
+              <td><button id="{{ $food->id }}" class = "btn btn-sm btn-info btn-select">Select</button></td>
             </tr>
             @else
             
@@ -386,6 +386,32 @@
 </div>
 
 @endsection
+
+<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript">
+    $(function()
+    {
+        $('.showMore_Btn').on('click', function()
+        {
+            $('.more_details').removeClass('hidden');
+        });
+
+        $(document).on('click', '.btn-select', function()
+        {
+            $.ajax({
+              url: "{{ route('admin.reserv.save_to_session') }}",
+              type: 'GET',
+              dataType: 'json',
+              data: {'id' : $(this).attr('id') },
+              success: function(data)
+              {
+                console.log(data);
+              }
+            })
+        });
+    });
+
+</script>
 
 @section('stylesheets')
     <link rel="stylesheet" type="text/css" href="{{url('css/datatables.css')}}" />
