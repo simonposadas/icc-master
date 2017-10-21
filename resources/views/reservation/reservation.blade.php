@@ -19,7 +19,7 @@
 
 <center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Create Reservation </h2></center>
 
-{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'url' => route('r.packages.store', ['id' => $id, 'package_id' => session('package_id')])]) !!}
+{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'url' => route('r.packages.store', ['id' => $id, 'package_id' => $id])]) !!}
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="Details">
@@ -117,13 +117,15 @@
         </div>
     </div>
 
+    <input type="text" value="{{  $id }}" name="id" class="hidden"> 
+
     <!-- Event Details -->
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="Details">
                 <center><h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Event Details </h2></center>
                 <div class="form-group">
-                    <label>Event Type: </label> {{ config()->get('constants.event_type')[session('event_type')] }} <br>
+                    <label>Event Type: </label> {{ session('event_type') }} <br>
                     {!! Form::hidden('event_type', session('event_type')) !!}
                     <label>Schedule Date: </label> {{ session('reserv_date') }} <br>
                     {!! Form::hidden('reserv_date', session('reserv_date')) !!}
@@ -133,12 +135,11 @@
                     {!! Form::hidden('reserv_guestNo', session('reserv_guestNo')) !!}
                     <label>Event Place: </label> {{ session('event_place') }} <br>
                     {!! Form::hidden('event_place', session('event_place')) !!}
-                    <label>Package: </label> {{ \App\Model\PackageDetail::find(session('package_id'))->package_name }} <br>
+                    <label>Package: </label> {{ $id }} <br>
                     {!! Form::hidden('package_id', session('package_id')) !!}
                 </div>
             </div>
         </div>
-
         <div class="next">
             <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">Back</button>
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>

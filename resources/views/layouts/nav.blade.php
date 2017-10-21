@@ -94,4 +94,6 @@
     <script src="{{ asset('js/sweetalert.min.js') }}"></script> 
     <!-- Include this after the sweet alert js file -->
     @include('sweet::alert')
+
+    @yield('scripts')
 </html>

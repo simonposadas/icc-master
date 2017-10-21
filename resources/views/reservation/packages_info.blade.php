@@ -26,29 +26,60 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="Details">
-            <center><h2><p class="bg-primary">{{ $package->package_name }} </h2></center>
-            @foreach($package->package_food as $food)
-            <h3>
-                <Strong>{{ $food->food_type->food_type_name }} : </Strong>
-                <small>{{ $food->desc }}</small>
-            </h3>
-            @endforeach
+            
+            <h1>Food Selection</h1>
+            <div class="Details">
+                <h3>Appetizer</h3>
+                <input type="text" class="hidden" value="
+                {{ $packages -> package_id }}">
+                {{ $app1 }}<br>
+                {{ $app2 }}
+           </div>
+
+           <div class="Details">
+                <h3>Soup</h3>
+                {{ $sp1 }}<br>
+                {{ $sp2 }}<br>
+                {{ $sp3 }}<br>
+                {{ $sp4 }}
+           </div>
+
+           <div class="Details">
+                <h3>Main Dish</h3>
+                {{ $dish1 }}<br>
+                {{ $dish2 }}<br>
+                {{ $dish3 }}<br>
+                {{ $dish4 }}<br>
+                {{ $dish5 }}<br>
+                {{ $dish6 }}<br>
+           </div>
+
+           <div class="Details">
+                <h3>Dessert</h3>
+                {{ $dess1 }}<br>
+                {{ $dess2 }}
+           </div>
+        
         </div>
     </div>
-</div>
-{!! Form::open(['url' => route('r.packages.client', ['id' => $id, 'package_id' => $package->package_id]), 'method' => 'GET']) !!}
-{!! Form::close() !!}
+</div>  
+
+
 <div class="next">
     <p>
         <!--        <a href="/Main">-->
         <a href="{{ url()->previous() }}" role="button" class="btn btn-primary btn-lg">Back</a>
         <!--            <a href="/Details">-->
 
-        <button type="button" class="btn btn-primary btn-lg" id='btn-next'>Next</button>
+        <a href="{{ route('r.packages.client', ['package_id' => $packages->package_id , 'id'=> $packages->package_id, 'app1' => $app1, 'app2' => $app2, 'sp1' => $sp1, 'sp2' => $sp2, 'sp3' => $sp3, 'sp4' => $sp4, 'dish1' => $dish1,'dish2' => $dish2,'dish3' => $dish3,'dish4' => $dish4,'dish5' => $dish5,'dish6' => $dish6, 'dess1' => $dess1 , 'dess2' => $dess2 ]) }}" type="button" class="btn btn-primary btn-lg" id='btn-next'>Next</a>
     </p>
 </div>
 
 <script>
+
+
+
+
     $('#btn-next').on('click', function () {
         $('form').submit();
     });

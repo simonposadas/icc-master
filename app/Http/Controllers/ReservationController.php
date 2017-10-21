@@ -8,7 +8,7 @@ use App\Model\PackageDetail;
 use App\Model\CustomerInfo;
 use App\Model\EventDetail;
 use App\Model\ReservationDetail;
-
+use Session;
 /**
  *
  */
@@ -55,7 +55,9 @@ class ReservationController extends Controller {
      * @return typePopulate the event details view
      */
     public function details() {
+        
         return view($this->view . 'details');
+
     }
 
     /**
@@ -87,6 +89,9 @@ class ReservationController extends Controller {
      */
     public function packageList(\App\Http\Requests\Reservation\PackageTypeIdRequest $packageTypeIdRequest) {
 
+        $packages = PackageDetail::find($packageTypeIdRequest);
+
+        
         $main = \DB::table('food_details')
         ->where('status', 0)
         ->where('food_type_id', 10)->get();
@@ -99,7 +104,22 @@ class ReservationController extends Controller {
         ->where('status', 0)
         ->where('food_type_id', 1)->get();
 
-        return view($this->view . 'packages_list', ['main' => $main, 'dessert' => $dessert, 'appetite' => $appetite, 'packages' => PackageType::find($packageTypeIdRequest->id)->package_detail]);
+        $sp = \DB::table('food_details')
+        ->where('status', 0)
+        ->where('food_type_id', 2)->get();
+
+
+        return view($this->view . 'packages_list', ['main' => $main, 'dessert' => $dessert, 'appetite' => $appetite, 'packages' => $packages, 'sp' => $sp]);
+    }
+
+    public function getPackageValue(Request $request){
+
+        
+        $packages = PackageDetail::find($request -> id);
+
+
+         return view($this->view . 'packages_info', ['sp1' => $request->sp1, 'sp2' => $request->sp2, 'sp3' => $request->sp3, 'sp4' => $request->app1, 'sp4' => $request->app1,'app1' => $request->app1, 'app2' => $request->app2, 'app3' => $request->app3, 'app4' => $request->app5, 'dish1' => $request->dish1, 'dish2' => $request->dish2, 'dish3' => $request->dish3, 'dish4' => $request->dish4, 'dish5' => $request->dish5, 'dish6' => $request->dish7, 'dess1' => $request->dess1, 'dess2' => $request->dess2, 'packages' => $packages]);
+
     }
 
     /**
@@ -109,9 +129,7 @@ class ReservationController extends Controller {
      * @return type
      */
     public function packageInfo(\App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest) {
-        return view($this->view . 'packages_info', [
-            'id' => $packageFoodIdRequest->id,
-            'package' => PackageDetail::find($packageFoodIdRequest->package_id)]);
+
     }
 
     /**
@@ -120,9 +138,12 @@ class ReservationController extends Controller {
      * @param \App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest
      * @return type
      */
-    public function packageClient(\App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest) {
-        session(['package_id' => $packageFoodIdRequest->package_id]);
-        return view($this->view . 'reservation', ['id' => $packageFoodIdRequest->id]);
+    public function packageClient(\App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest, $id) {
+        $hello = $packageFoodIdRequest -> all();
+        
+        return view($this->view . 'reservation', ['id' => $id, 'foods' => $hello]);
+
+
     }
 
     /**
@@ -169,4 +190,12 @@ class ReservationController extends Controller {
         return redirect('/');
 
     }
+
+    public function getReservationDetails(Request $request){
+
+
+
+
+    }
+
 }

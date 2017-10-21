@@ -180,10 +180,11 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
                     </h2>
                 </center>
                 <!-- form -->
-                {!! Form::open(['class' => 'form-horizontal', 'url' => route('r.details')]) !!}
+                {!! Form::open(['class' => 'form-horizontal', 'url' => route('r.details'), 'method' =>'post']) !!}
                 <!-- event type -->
                 <div class="form-group{{ $errors->has('event_type') ? ' has-error' : '' }}">
                     {!! Form::label('event_type', 'Event Type:') !!}
+
                     {!! Form::select('event_type', config()->get('constants.event_types'), session('event_type', 'wedding'), ['class' => 'form-control']) !!}
                     @if ($errors->has('event_type'))
                     <span class="help-block">

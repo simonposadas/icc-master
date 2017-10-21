@@ -298,3 +298,7 @@ Route::get('/searchName', 'AdminController@scopeSearch');
 Route::post('/addequipment', 'AdminController@addequipment');
 Route::post('/editequipment', 'AdminController@editequipment');
 Route::post('/deleteequipment', 'AdminController@deleteequipment');
+
+Route::post('/getPackageFoods', ['uses' => 'ReservationController@getPackageValue', 'as' => 'packagevalue']);
+
+Route::post('/getReservationDetails', ['uses' => 'ReservationController@getReservationDetails', 'as' => 'getReserve']);
