@@ -53,17 +53,17 @@
             top: 205%;
         }*/
 </style>
-<center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Packages </h2></center>
+<center><h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Foods </h2></center>
 
 <div class="container-fluid col-md-offset-2">
     <div class="form-group">
 
             <label>Choose Appetizer</label>
-            <select class="form-control" name="type">
+            <select class="form-control-lg"name="type"> 
             <option>Select</option>
-            @foreach($appetite as $appetites)
-                <option value="{{$appetites->food_name}}">{{$appetites->food_name}}</option>
-            @endforeach
+            @foreach($appetite as$appetites)
+                <option value="{{$appetites->food_name}}">{{$appetites->food_name}}</option> 
+            @endforeach 
             </select>
 
             <label>Choose Main Dishes</label>
