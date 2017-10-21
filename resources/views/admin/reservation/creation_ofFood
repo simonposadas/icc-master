@@ -16,7 +16,7 @@
                         <div class="panel-heading">
                             List of foods
                             <div class="pull-right">
-                            	<a href = "{{route('Create_Food')}}" type="button" class="btn btn-primary btn-xs" id="addfood">Create a Food</a>
+                            	<button type="button" class="btn btn-primary btn-xs" id="addfood">Add Food</button>
                             </div>
                         </div>
                         <!-- /.panel-heading -->
@@ -36,11 +36,11 @@
                                     <td>{{$var->food_id}}</td>
                                     <td>{{$var->food_name}}</td>
                                 	<td>{{$var->food_type_name}}</td>
-                                    <td>Php {{$var->price}}</td>
+                                    <td>{{$var->price}}</td>
                                     <td>
                                         <button class="btn btn-primary edittype" data-id="{{$var->food_id}}">Edit</button>
                                         <button class="btn btn-danger deletetype" data-id="{{$var->food_id}}">Delete</button>
-                                    </td> 
+                                    </td>
                                 </tbody>
                                 @endforeach
                             </table>
@@ -56,7 +56,42 @@
 @endsection
 
 @section('modal')
-
+<div class="modal fade" tabindex="-1" role="dialog" id="addModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Food</h4>
+      </div>
+      <div class="modal-body">
+    <form method="post" action="/addfood">
+    {{csrf_field()}}
+          <div class="form-group">
+            <label>Food Name</label>
+            <input type="text" class="form-control" placeholder="" name="name">
+          </div>
+          <div class="form-group">
+            <label>Food Type</label>
+            <select class="form-control" name="type">
+            <option>Select</option>
+            @foreach($type as $type)
+                <option value="{{$type->food_type_id}}">{{$type->food_type_name}}</option>
+            @endforeach
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" placeholder="" name="price">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog" role="document">

@@ -142,6 +142,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -205,5 +206,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 ];

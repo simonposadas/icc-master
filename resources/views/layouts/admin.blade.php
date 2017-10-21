@@ -115,6 +115,9 @@
                                         <a href="/admin/food"> Food</a>
                                     </li>
                                     <li>
+                                        <a href="/reservation/New_reservations"> Recipe</a>
+                                    </li>
+                                    <li>
                                         <a href="/admin/foodtype"> Food Type</a>
                                     </li>
                                     <li>
