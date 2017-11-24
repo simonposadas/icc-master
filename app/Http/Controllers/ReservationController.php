@@ -166,6 +166,11 @@ class ReservationController extends Controller {
                     'place' => $storeRequest->event_place
         ]);
 
+        $order_details = OrderDetail::create([
+                    'reserv_id' => $reservation_detail->reserv_id,
+                    'food_id' => $food_details->food_id
+        ]);
+
         $data = [
             'reserv_guestNo' => $storeRequest->reserv_guestNo,
             'reserv_date' => date('Y-m-d', strtotime($storeRequest->reserv_date)),
@@ -179,6 +184,7 @@ class ReservationController extends Controller {
         if (!ReservationDetail::create($data)) {
             EventDetail::destroy($event_details->event_id);
             CustomerInfo::destroy($customer_info->cust_id);
+            OrderDetail::destroy($order_details->order_id);
             alert()->error('Something went wrong in reservation.', 'Error')
                     ->persistent('Close');
             return redirect()->back();
