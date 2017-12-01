@@ -4,6 +4,10 @@
 
 @section('content')
 
+<head>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+
 <style type="text/css">
     body{
         background-image: url('{{ asset("images/background.jpg") }}');
@@ -14,12 +18,12 @@
 <div class="container-fluid col-md-offset-3 ">
     {{ csrf_field() }}
     <div class="form-group col-md-8">
-        <form method="post" action="{{ route('packagevalue') }}">
+        <form id="testsubmit">
         <input type="text" value="{{  $packages -> package_id }}" name="id" class="hidden"> 
         <label>Choose Appetizer</label>
             
         <div class="form-group">
-            <select class="form-control" name="app1" id="app1"> 
+            <select class="form-control" name="app1" id="a1"> 
             <option value=""> Select </option>       
             @foreach($appetite as $appetites)
                        
@@ -28,7 +32,7 @@
             </select>
         </div>
             <div class="form-group">
-            <select class="form-control" name="app2" id="app2">
+            <select class="form-control" name="app2" id="a2">
             <option value="">Select</option>
             @foreach($appetite as $appetites)
                 <option value="{{$appetites->food_name}}">{{$appetites->food_name}}</option>
@@ -38,7 +42,7 @@
 
         <div class="form-group">
             <label>Choose Soup</label>
-            <select class="form-control" name="sp1" id="sp1">
+            <select class="form-control" name="sp1" id="a3">
             <option value="">Select</option>
             @foreach($sp as $sps)
                 <option value="{{$sps->food_name}}">{{$sps->food_name}}</option>
@@ -47,7 +51,7 @@
         </div>
 
         <div class="form-group">
-            <select class="form-control" name="sp2" id="sp2">
+            <select class="form-control" name="sp2" id="a4">
             <option value="">Select</option>
             @foreach($sp as $sps)
                 <option value="{{$sps->food_name}}">{{$sps->food_name}}</option>
@@ -56,7 +60,7 @@
         </div>
 
         <div class="form-group">
-            <select class="form-control" name="sp3" id="sp3">
+            <select class="form-control" name="sp3" id="a5">
             <option value="">Select</option>
             @foreach($sp as $sps)
                 <option value="{{$sps->food_name}}">{{$sps->food_name}}</option>
@@ -65,7 +69,7 @@
         </div>
 
         <div class="form-group">
-            <select class="form-control" name="sp4" id="sp4">
+            <select class="form-control" name="sp4" id="a6">
             <option value="">Select</option>
             @foreach($sp as $sps)
                 <option value="{{$sps->food_name}}">{{$sps->food_name}}</option>
@@ -75,7 +79,7 @@
 
         <div class="form-group">
             <label>Choose Main Dishes</label>
-            <select class="form-control" name="dish1" id="dish1">
+            <select class="form-control" name="dish1" id="a7">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -83,7 +87,7 @@
             </select>
         </div>
         <div class="form-group">
-            <select class="form-control" name="dish2" id="dish2">
+            <select class="form-control" name="dish2" id="a8">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -91,7 +95,7 @@
             </select>
         </div>
         <div class="form-group">
-            <select class="form-control" name="dish3" id="dish3">
+            <select class="form-control" name="dish3" id="a9">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -99,7 +103,7 @@
             </select>
         </div>
         <div class="form-group">
-            <select class="form-control" name="dish4" id="dish4">
+            <select class="form-control" name="dish4" id="a10">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -107,7 +111,7 @@
             </select>
         </div>
         <div class="form-group">
-            <select class="form-control" name="dish5" id="dish5">
+            <select class="form-control" name="dish5" id="a11">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -115,7 +119,7 @@
             </select>
         </div>
         <div class="form-group">
-            <select class="form-control" name="dish6" id="dish6">
+            <select class="form-control" name="dish6" id="a12">
             <option value="">Select</option>
             @foreach($main as $mains)
                 <option value="{{$mains->food_name}}">{{$mains->food_name}}</option>
@@ -124,7 +128,7 @@
         </div>
         <div class="form-group">
             <label>Choose Dessert</label>
-            <select class="form-control" name="dess1" id="dess1">
+            <select class="form-control" name="dess1" id="a13">
             <option value="">Select</option>
             @foreach($dessert as $desserts)
                 <option value="{{$desserts->food_name}}">{{$desserts->food_name}}</option>
@@ -133,7 +137,7 @@
           </div>
 
           <div class="form-group">
-            <select class="form-control" name="dess2" id="dess2">
+            <select class="form-control" name="dess2" id="a14">
             <option value="">Select</option>
             @foreach($dessert as $desserts)
                 <option value="{{$desserts->food_name}}">{{$desserts->food_name}}</option>
@@ -197,6 +201,30 @@
     <script>
 
         $(document).ready(function(){
+
+            $(document).on('submit', '#testsubmit',function(e){
+                var arrayTest = [];
+
+                for (var i = 1; i <= 14; i++) {
+                    arrayTest.push($('#a'+i).val())
+                }
+                e.preventDefault();
+                $.ajax({
+                    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      },
+                    url : '/test/submit',
+                    type: 'POST',
+                    data: {
+                        foods : arrayTest
+                    },
+                    success: function(data){
+                        window.location.href='r.packages.info'
+                    }
+                });
+                
+                // alert(arrayTest)
+            });
 
             $('#app1').hide();
             $('#app2').hide();

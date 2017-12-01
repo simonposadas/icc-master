@@ -71,7 +71,7 @@
         <a href="{{ url()->previous() }}" role="button" class="btn btn-primary btn-lg">Back</a>
         <!--            <a href="/Details">-->
 
-        <a href="{{ route('r.packages.client', ['package_id' => $packages->package_id , 'id'=> $packages->package_id, 'app1' => $app1, 'app2' => $app2, 'sp1' => $sp1, 'sp2' => $sp2, 'sp3' => $sp3, 'sp4' => $sp4, 'dish1' => $dish1,'dish2' => $dish2,'dish3' => $dish3,'dish4' => $dish4,'dish5' => $dish5,'dish6' => $dish6, 'dess1' => $dess1 , 'dess2' => $dess2 ]) }}" type="button" class="btn btn-primary btn-lg" id='btn-next'>Next</a>
+        <!-- <a href="{{ route('r.packages.client', ['package_id' => $packages->package_id , 'id'=> $packages->package_id, 'app1' => $app1, 'app2' => $app2, 'sp1' => $sp1, 'sp2' => $sp2, 'sp3' => $sp3, 'sp4' => $sp4, 'dish1' => $dish1,'dish2' => $dish2,'dish3' => $dish3,'dish4' => $dish4,'dish5' => $dish5,'dish6' => $dish6, 'dess1' => $dess1 , 'dess2' => $dess2 ]) }}" type="button" class="btn btn-primary btn-lg" id='btn-next'>Next</a> -->
     </p>
 </div>
 

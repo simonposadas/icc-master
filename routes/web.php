@@ -20,6 +20,8 @@ Route::get('/', function () {
  * /reservation
  */
 
+Route::post('/test/submit','ReservationController@packageClient');
+
 
 
 $this->group(['prefix' => 'reservation'], function () {
@@ -242,6 +244,7 @@ Route::get('/Details', function() {
 Route::get('/Credentials', function() {
     return view('credentials');
 });
+
 
 Route::get('/scopeSearch2', 'Admin\InventoryController@scopeSearch2');
 Route::get('/scopeSearch3', 'AdminController@scopeSearch3');

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Model\PackageType;
 use App\Model\PackageDetail;
 use App\Model\CustomerInfo;
 use App\Model\EventDetail;
 use App\Model\ReservationDetail;
 use Session;
+use DB;
+use Response;
 /**
  *
  */
@@ -138,12 +141,23 @@ class ReservationController extends Controller {
      * @param \App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest
      * @return type
      */
-    public function packageClient(\App\Http\Requests\Reservation\PackageFoodIdRequest $packageFoodIdRequest, $id) {
-        $hello = $packageFoodIdRequest -> all();
+    public function packageClient(Request $request) {
+
+        // dd($request->all());
+
+        $test = $request->foods;
+        $arrayyy = [];
+
+        foreach ($test as $y) {
+            array_push($arrayyy, $y);
+        }
+
+        session_start();   
+        $_Session['arrayTest'] = $arrayyy;
         
-        return view($this->view . 'reservation', ['id' => $id, 'foods' => $hello]);
-
-
+        // $hello = $packageFoodIdRequest -> all();
+        // $foods = array($hello);
+        // return view($this->view . 'reservation', ['id' => $id, 'foods' => $foods]);
     }
 
     /**

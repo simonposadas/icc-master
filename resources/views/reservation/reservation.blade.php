@@ -117,9 +117,10 @@
         </div>
     </div>
 
-    <input type="text" value="{{  $id }}" name="id" class="hidden"> 
+    <input type="text" value="{{  $id }}" name="id" class="hidden">
+    <input type="text" value="{{  $foods }}" name="foods" class="hidden">
 
-    <!-- Event Details -->
+    <!-- Event Details -->  
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="Details">
